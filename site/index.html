@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f4ed" />
+    <meta
+      name="description"
+      content="Rene Handyman and Contracting — thoughtful home repairs and renovations in Milton, Mississauga, Brampton, Oakville, Burlington, and Toronto. A website concept."
+    />
+    <title>Rene Handyman and Contracting | A little care. A better home.</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/carpentry.webp"
+      as="image"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <svg
+      class="icon-definitions"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M4 12h15M13 5l7 7-7 7" />
+        </symbol>
+        <symbol id="i-diagonal" viewBox="0 0 24 24">
+          <path d="M5 19 19 5M5 5h14v14" />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+          <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
+          <circle cx="12" cy="10" r="2" />
+        </symbol>
+        <symbol id="i-hammer" viewBox="0 0 32 32">
+          <path d="m5 25 12-12 4 4L9 29zM15 7l6-5 8 8-5 6-4-4-3 3-4-4 3-3z" />
+        </symbol>
+        <symbol id="i-wall" viewBox="0 0 32 32">
+          <path d="M4 5h24v22H4zM4 16h24M15 5v11M11 16v11M23 16v11" />
+        </symbol>
+        <symbol id="i-paint" viewBox="0 0 32 32">
+          <rect x="3" y="4" width="21" height="10" rx="2" />
+          <path d="M24 9h4v11H15v4M12 24h6v6h-6z" />
+        </symbol>
+        <symbol id="i-carpentry" viewBox="0 0 32 32">
+          <path d="M5 27V6h22v21H5zM5 11h22M16 11v16M12 17v4M20 17v4" />
+        </symbol>
+        <symbol id="i-floor" viewBox="0 0 32 32">
+          <path
+            d="m16 3 13 13-13 13L3 16zM9.5 9.5l13 13M9.5 22.5l13-13M6 19l13-13M13 26l13-13"
+          />
+        </symbol>
+        <symbol id="i-home" viewBox="0 0 32 32">
+          <path d="M3 15 16 4l13 11M7 12v16h18V12M13 28V18h6v10" />
+        </symbol>
+        <symbol id="i-spark" viewBox="0 0 32 32">
+          <path
+            d="m16 2 3.8 10.2L30 16l-10.2 3.8L16 30l-3.8-10.2L2 16l10.2-3.8z"
+          />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="m5 12 4 4L19 6" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+          <path d="m6 3 4 5-2 3a15 15 0 0 0 5 5l3-2 5 4-2 3C10 22 2 14 3 5z" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="utility-bar">
+      <div class="container utility-content">
+        <span>A little care. A better home.</span
+        ><span
+          ><svg aria-hidden="true" focusable="false" class="icon tiny">
+            <use href="#i-pin" />
+          </svg>
+          Halton &amp; the Greater Toronto Area</span
+        >
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          href="#home"
+          class="brand"
+          aria-label="Rene Handyman and Contracting home"
+          ><span class="brand-mark" aria-hidden="true"
+            ><svg aria-hidden="true" focusable="false" viewBox="0 0 40 44">
+              <path
+                d="M4 19 20 5l16 14M9 16v23h22V16M17 39V26h7v13"
+              /></svg></span
+          ><span class="brand-type"
+            ><strong>RENE<span class="brand-dot">.</span></strong
+            ><span>HANDYMAN &amp; CONTRACTING</span></span
+          ></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+        >
+          <span></span><span></span>
+        </button>
+        <nav id="primary-navigation" aria-label="Main navigation">
+          <a href="#services">Services</a><a href="#about">Meet Rene</a
+          ><a href="#inspiration">Project ideas</a
+          ><a href="#areas">Service area</a
+          ><a class="button button-dark header-cta" href="#contact"
+            >Request an estimate
+            <svg aria-hidden="true" focusable="false" class="icon">
+              <use href="#i-diagonal" /></svg
+          ></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero container" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="little-line"></span> YOUR NEIGHBOURHOOD HANDYMAN &amp;
+            CONTRACTOR
+          </p>
+          <h1 id="hero-title">
+            Your home.<br />Our <span class="orange">handiwork.</span>
+          </h1>
+          <p class="hero-description">
+            The little fixes. The long-awaited upgrades. Let’s make your space
+            work better, feel better, and feel more like you.
+          </p>
+          <a class="button button-orange" href="#contact"
+            >Let’s talk about your project
+            <svg aria-hidden="true" focusable="false" class="icon">
+              <use href="#i-diagonal" /></svg
+          ></a>
+          <div class="hero-note">
+            <svg aria-hidden="true" focusable="false" class="icon">
+              <use href="#i-home" /></svg
+            ><span>From everyday repairs to a fresh start.</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="assets/carpentry.webp"
+            alt="Concept image of a carpenter carefully adjusting natural oak kitchen cabinetry."
+            width="1536"
+            height="1024"
+            fetchpriority="high"
+          /><span class="image-label">AI-GENERATED CONCEPT IMAGE</span>
+          <div class="hero-sticker">
+            <svg aria-hidden="true" focusable="false" class="icon">
+              <use href="#i-spark" /></svg
+            ><span>Good work starts<br />with the little details.</span>
+          </div>
+          <span class="hero-edge" aria-hidden="true"
+            >MADE BETTER, ONE DETAIL AT A TIME.</span
+          >
+        </div>
+      </section>
+
+      <div class="service-ribbon">
+        <div class="container ribbon-inner">
+          <span class="ribbon-intro"
+            >BIG PLANS. SMALL FIXES. WE’RE HERE FOR BOTH.</span
+          ><span>Repairs</span
+          ><span class="ribbon-star" aria-hidden="true">✳</span
+          ><span>Renovations</span
+          ><span class="ribbon-star" aria-hidden="true">✳</span
+          ><span>Home improvements</span
+          ><svg aria-hidden="true" focusable="false" class="icon">
+            <use href="#i-diagonal" />
+          </svg>
+        </div>
+      </div>
+
+      <section
+        class="section container"
+        id="services"
+        aria-labelledby="services-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / WHAT WE CAN HELP WITH</p>
+            <h2 id="services-title">
+              The to-do list?<br />Consider it
+              <span class="serif">handled.</span>
+            </h2>
+          </div>
+          <p>
+            One repair or a room full of possibilities.<br />Find a little help
+            for whatever’s next.
+          </p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-card-top">
+              <svg aria-hidden="true" focusable="false" class="service-icon">
+                <use href="#i-hammer" /></svg
+              ><span>01</span>
+            </div>
+            <h3>Handyman repairs</h3>
+            <p>
+              Loose handles, sticking doors, shelves to hang. A helping hand for
+              the jobs that keep adding up.
+            </p>
+            <a
+              href="#contact"
+              data-service="Handyman repairs"
+              class="service-link"
+              >Let’s fix it
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-diagonal" /></svg
+            ></a>
+          </article>
+          <article class="service-card">
+            <div class="service-card-top">
+              <svg aria-hidden="true" focusable="false" class="service-icon">
+                <use href="#i-wall" /></svg
+              ><span>02</span>
+            </div>
+            <h3>Drywall &amp; finishing</h3>
+            <p>
+              Patches, repairs, and smooth finishes. Give your walls a clean
+              foundation for what comes next.
+            </p>
+            <a
+              href="#contact"
+              data-service="Drywall & finishing"
+              class="service-link"
+              >Smooth things over
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-diagonal" /></svg
+            ></a>
+          </article>
+          <article class="service-card">
+            <div class="service-card-top">
+              <svg aria-hidden="true" focusable="false" class="service-icon">
+                <use href="#i-paint" /></svg
+              ><span>03</span>
+            </div>
+            <h3>Painting &amp; refreshes</h3>
+            <p>
+              A fresh coat can change the whole feeling. Bring new life to
+              walls, trim, and everyday spaces.
+            </p>
+            <a
+              href="#contact"
+              data-service="Painting & refreshes"
+              class="service-link"
+              >Freshen it up
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-diagonal" /></svg
+            ></a>
+          </article>
+          <article class="service-card">
+            <div class="service-card-top">
+              <svg aria-hidden="true" focusable="false" class="service-icon">
+                <use href="#i-carpentry" /></svg
+              ><span>04</span>
+            </div>
+            <h3>Carpentry &amp; details</h3>
+            <p>
+              Trim, shelving, cabinetry adjustments, and thoughtful woodwork
+              that pulls a space together.
+            </p>
+            <a
+              href="#contact"
+              data-service="Carpentry & details"
+              class="service-link"
+              >Add the finishing touch
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-diagonal" /></svg
+            ></a>
+          </article>
+          <article class="service-card">
+            <div class="service-card-top">
+              <svg aria-hidden="true" focusable="false" class="service-icon">
+                <use href="#i-floor" /></svg
+              ><span>05</span>
+            </div>
+            <h3>Flooring &amp; tile</h3>
+            <p>
+              Step into something better with flooring updates, tile work, and
+              those all-important finishing edges.
+            </p>
+            <a
+              href="#contact"
+              data-service="Flooring & tile"
+              class="service-link"
+              >Start from the ground up
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-diagonal" /></svg
+            ></a>
+          </article>
+          <article class="service-card">
+            <div class="service-card-top">
+              <svg aria-hidden="true" focusable="false" class="service-icon">
+                <use href="#i-home" /></svg
+              ><span>06</span>
+            </div>
+            <h3>Kitchen &amp; bath updates</h3>
+            <p>
+              From a few practical changes to a bigger refresh, explore new
+              possibilities for your busiest rooms.
+            </p>
+            <a
+              href="#contact"
+              data-service="Kitchen & bath updates"
+              class="service-link"
+              >Reimagine your space
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-diagonal" /></svg
+            ></a>
+          </article>
+        </div>
+        <div class="services-footer">
+          <span>Something else on your list? Let’s hear it.</span
+          ><a class="text-link" href="#contact"
+            >Tell us what you have in mind
+            <svg aria-hidden="true" focusable="false" class="icon">
+              <use href="#i-arrow" /></svg
+          ></a>
+        </div>
+      </section>
+
+      <section class="approach" aria-labelledby="approach-title">
+        <div class="container approach-inner">
+          <div class="approach-intro">
+            <p class="eyebrow">LESS COMPLICATED. MORE CONSIDERED.</p>
+            <h2 id="approach-title">
+              A better home.<br />A simple
+              <span class="serif">place to start.</span>
+            </h2>
+            <p>
+              You don’t need to have every detail figured out.<br />Just an idea
+              of what you’d like to make better.
+            </p>
+            <a href="#contact" class="button button-cream"
+              >Start the conversation
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-diagonal" /></svg
+            ></a>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="step-number">01</span>
+              <div>
+                <h3>Tell us about your project.</h3>
+                <p>
+                  A quick fix or a bigger idea? Share your space, your wish
+                  list, and where you’re located.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <div>
+                <h3>Talk through the details.</h3>
+                <p>
+                  Discuss the work, the possibilities, and what a practical next
+                  step could look like.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <div>
+                <h3>Make room for better.</h3>
+                <p>
+                  Turn that “one day” project into a clear plan for your home.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="section container inspiration"
+        id="inspiration"
+        aria-labelledby="inspiration-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / A LITTLE PROJECT INSPIRATION</p>
+            <h2 id="inspiration-title">
+              Small changes.<br /><span class="serif">Big possibilities.</span>
+            </h2>
+          </div>
+          <p>
+            Picture what’s possible in your space.<br />These AI-generated
+            concepts are here to inspire.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <article class="project project-painting">
+            <div class="project-image">
+              <img
+                src="assets/painting.webp"
+                alt="AI-generated concept of a painter refreshing an interior wall with protective floor coverings."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span
+              ><a
+                href="#contact"
+                data-service="Painting & refreshes"
+                class="project-arrow"
+                aria-label="Discuss a painting project"
+                ><svg aria-hidden="true" focusable="false" class="icon">
+                  <use href="#i-diagonal" /></svg
+              ></a>
+            </div>
+            <p class="project-category">PAINTING &amp; FINISHING</p>
+            <h3>A fresh feeling, from wall to wall.</h3>
+          </article>
+          <article class="project project-tiling">
+            <div class="project-image">
+              <img
+                src="assets/tiling.webp"
+                alt="AI-generated concept of a tiler carefully positioning ivory tiles beside an oak bathroom vanity."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span
+              ><a
+                href="#contact"
+                data-service="Flooring & tile"
+                class="project-arrow"
+                aria-label="Discuss a flooring or tile project"
+                ><svg aria-hidden="true" focusable="false" class="icon">
+                  <use href="#i-diagonal" /></svg
+              ></a>
+            </div>
+            <p class="project-category">TILE &amp; FLOORING</p>
+            <h3>The details bring it all together.</h3>
+          </article>
+          <article class="project project-deck">
+            <div class="project-image">
+              <img
+                src="assets/deck.webp"
+                alt="AI-generated concept of a carpenter fastening cedar deck boards in a sunny backyard."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span
+              ><a
+                href="#contact"
+                data-service="Other home improvement"
+                class="project-arrow"
+                aria-label="Discuss an outdoor improvement project"
+                ><svg aria-hidden="true" focusable="false" class="icon">
+                  <use href="#i-diagonal" /></svg
+              ></a>
+            </div>
+            <p class="project-category">OUTDOOR IMPROVEMENTS</p>
+            <h3>A little more life outside.</h3>
+          </article>
+        </div>
+        <p class="imagery-note">
+          A look at the possibilities, not a portfolio. All photographs on this
+          page are AI-generated concepts, not completed customer projects.
+        </p>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="container about-inner">
+          <div class="about-graphic" aria-hidden="true">
+            <span class="graphic-eyebrow">RENE HANDYMAN &amp; CONTRACTING</span
+            ><svg
+              aria-hidden="true"
+              focusable="false"
+              class="graphic-spark"
+              viewBox="0 0 32 32"
+            >
+              <use href="#i-spark" />
+            </svg>
+            <p>
+              Small fixes.<br />Thoughtful upgrades.<br /><span
+                >Fresh possibilities.</span
+              >
+            </p>
+            <div class="graphic-baseline">
+              <span>A LITTLE CARE GOES A LONG WAY.</span
+              ><svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-diagonal" />
+              </svg>
+            </div>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">03 / A NAME BEHIND THE WORK</p>
+            <h2 id="about-title">
+              Hi, we’re Rene.<br />Let’s make your<br /><span class="serif"
+                >house feel like home.</span
+              >
+            </h2>
+            <p>
+              Rene Handyman and Contracting is built around a simple idea:
+              taking care of the details that make everyday life at home a
+              little better.
+            </p>
+            <p>
+              From the repair that’s been waiting to the room ready for a
+              refresh, there’s a place to start. Tell us what you have in mind,
+              and let’s talk through the possibilities.
+            </p>
+            <a href="#contact" class="text-link"
+              >Let’s get to know your project
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-arrow" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section container areas-section"
+        id="areas"
+        aria-labelledby="areas-title"
+      >
+        <div class="areas-copy">
+          <p class="eyebrow">04 / RIGHT HERE IN YOUR NEIGHBOURHOOD</p>
+          <h2 id="areas-title">
+            Close to home.<br /><span class="serif">Ready to help.</span>
+          </h2>
+          <p>
+            Home repairs and improvements across Halton and the Greater Toronto
+            Area.
+          </p>
+          <p class="area-question">
+            Have a project nearby?
+            <a href="#contact">Tell us where you’re located.</a>
+          </p>
+        </div>
+        <div class="areas-panel">
+          <div class="areas-panel-title">
+            <svg aria-hidden="true" focusable="false" class="icon">
+              <use href="#i-pin" /></svg
+            ><span>HALTON &amp; THE GREATER TORONTO AREA</span>
+          </div>
+          <ul class="city-list">
+            <li>Milton <span>↗</span></li>
+            <li>Mississauga <span>↗</span></li>
+            <li>Oakville <span>↗</span></li>
+            <li>Brampton <span>↗</span></li>
+            <li>Burlington <span>↗</span></li>
+            <li>Toronto <span>↗</span></li>
+          </ul>
+          <div class="areas-panel-bottom">
+            <span class="location-dot"></span> Local projects. A personal
+            approach.
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container contact-inner">
+          <div class="contact-copy">
+            <p class="eyebrow">05 / WHAT’S ON YOUR LIST?</p>
+            <h2 id="contact-title">
+              Let’s get<br />something<br /><span class="orange serif"
+                >done.</span
+              >
+            </h2>
+            <p>
+              A small repair, a fresh look, or a bigger idea.<br />Your next
+              home project starts with a hello.
+            </p>
+            <div class="contact-detail">
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-phone" />
+              </svg>
+              <div>
+                <span class="contact-detail-label"
+                  >PLACEHOLDER PHONE · DEMO ONLY</span
+                ><span class="phone-number">(416) 555-0148</span>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-pin" />
+              </svg>
+              <div>
+                <span class="contact-detail-label">OUR SERVICE AREA</span
+                ><span>Halton &amp; the Greater Toronto Area</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="form-heading">
+              <h3>Tell us about your project.</h3>
+              <span class="demo-label">CONCEPT FORM</span>
+            </div>
+            <p class="form-intro" id="form-explanation">
+              Try the enquiry experience. This demo sends and saves nothing.
+            </p>
+            <form
+              id="estimate-form"
+              action="#contact"
+              aria-describedby="form-explanation"
+            >
+              <div class="form-grid">
+                <div class="field">
+                  <label for="full-name"
+                    >Your name <span aria-hidden="true">*</span></label
+                  ><input
+                    id="full-name"
+                    autocomplete="name"
+                    placeholder="First and last name"
+                    required
+                    maxlength="120"
+                  />
+                </div>
+                <div class="field">
+                  <label for="email"
+                    >Email address <span aria-hidden="true">*</span></label
+                  ><input
+                    id="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                    required
+                    maxlength="254"
+                  />
+                </div>
+                <div class="field">
+                  <label for="phone"
+                    >Phone number
+                    <span class="optional">(optional)</span></label
+                  ><input
+                    id="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="(416) 555-0100"
+                    maxlength="40"
+                  />
+                </div>
+                <div class="field">
+                  <label for="city"
+                    >Your city <span aria-hidden="true">*</span></label
+                  ><select id="city" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option>Milton</option>
+                    <option>Mississauga</option>
+                    <option>Brampton</option>
+                    <option>Oakville</option>
+                    <option>Burlington</option>
+                    <option>Toronto</option>
+                    <option>Another nearby community</option>
+                  </select>
+                </div>
+                <div class="field full-width">
+                  <label for="service"
+                    >What can we help with?
+                    <span aria-hidden="true">*</span></label
+                  ><select id="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option>Handyman repairs</option>
+                    <option>Drywall &amp; finishing</option>
+                    <option>Painting &amp; refreshes</option>
+                    <option>Carpentry &amp; details</option>
+                    <option>Flooring &amp; tile</option>
+                    <option>Kitchen &amp; bath updates</option>
+                    <option>Other home improvement</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+                <div class="field full-width">
+                  <label for="project"
+                    >A little about your project
+                    <span aria-hidden="true">*</span></label
+                  ><textarea
+                    id="project"
+                    rows="3"
+                    placeholder="What would you like to repair, refresh, or reimagine?"
+                    required
+                    maxlength="4000"
+                  ></textarea>
+                </div>
+              </div>
+              <button class="button button-orange form-submit" type="submit">
+                Request an estimate
+                <svg aria-hidden="true" focusable="false" class="icon">
+                  <use href="#i-diagonal" />
+                </svg>
+              </button>
+              <p class="form-footnote">
+                * Required fields. Demonstration only; no enquiry is delivered.
+              </p>
+              <div
+                id="form-result"
+                class="form-result"
+                role="status"
+                tabindex="-1"
+                hidden
+              >
+                <svg aria-hidden="true" focusable="false" class="icon">
+                  <use href="#i-check" />
+                </svg>
+                <div>
+                  <strong>Demo only—your request has not been sent</strong>
+                  <p>
+                    That’s how the enquiry would work. Nothing has been sent or
+                    saved.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <a
+          href="#home"
+          class="brand footer-brand"
+          aria-label="Rene Handyman and Contracting, back to top"
+          ><span class="brand-mark" aria-hidden="true"
+            ><svg aria-hidden="true" focusable="false" viewBox="0 0 40 44">
+              <path
+                d="M4 19 20 5l16 14M9 16v23h22V16M17 39V26h7v13"
+              /></svg></span
+          ><span class="brand-type"
+            ><strong>RENE<span class="brand-dot">.</span></strong
+            ><span>HANDYMAN &amp; CONTRACTING</span></span
+          ></a
+        >
+        <p>A little care. A better home.</p>
+        <a class="back-top" href="#home"
+          >Back to top
+          <svg aria-hidden="true" focusable="false" class="icon">
+            <use href="#i-diagonal" /></svg
+        ></a>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year">2026</span> Rene Handyman and Contracting.</span
+        ><span
+          >Website concept · AI-generated imagery · Placeholder contact
+          details</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>
