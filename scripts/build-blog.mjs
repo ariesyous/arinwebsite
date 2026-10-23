@@ -125,9 +125,11 @@ function sharedLinks(markup, prefix, current = false) {
   return markup.replace(
     /(<a\b[^>]*\bhref=")([^"]+)(")/g,
     (match, before, href, after) => {
-      const rewritten = href.startsWith("#")
-        ? `${prefix}index.html${href}`
-        : `${prefix}${href}`;
+      const rewritten = /class="back-top"/.test(before)
+        ? "#main"
+        : href.startsWith("#")
+          ? `${prefix}index.html${href}`
+          : `${prefix}${href}`;
       return `${before}${rewritten}${after}${current && href === "blog/" ? ' aria-current="page"' : ""}`;
     },
   );
