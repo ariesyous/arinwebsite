@@ -1460,7 +1460,7 @@ p {
     font-size: 12px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .menu-toggle {
     display: flex;
     flex-direction: column;

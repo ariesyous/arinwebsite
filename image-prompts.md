@@ -1,5 +1,19 @@
 # Image generation prompts
 
+## Door-maintenance article illustration
+
+Built-in OpenAI image generation tool. Final asset: `site/assets/door-weatherstripping.webp`, optimized locally to WebP without visual retouching.
+
+Use case: photorealistic-natural. Asset type: editorial illustration for a handyman website article about finding draughts around an exterior door before replacing it. Create a warm, natural landscape photograph of an anonymous home improvement professional in a rust orange work shirt carefully inspecting the black rubber weatherstripping along the open front door of a tidy Ontario brick house. Close framing on one gloved hand gently checking the door-frame seal, timber door partly open, calm cream-painted interior visible beyond, green garden softly out of focus outside. Hands and seal physically plausible, work at ground level, no hazardous activity. Natural late afternoon light, warm wood grain, charcoal hardware, cream walls, cohesive with a warm orange and cream contractor website. Wide 3:2 composition. This is conceptual maintenance imagery, not a portrait of Arin or completed customer work. No text, logos, brands, watermark, graphic overlay, montage, or exaggerated visible damage.
+
+## Social link preview
+
+Built-in OpenAI image generation tool. Reference images: `site/assets/carpentry.webp` (source photograph) and `output/arin-larger-text-preview.png` (website branding reference). Final generated artwork was resized to 1200 × 630 and encoded as `site/assets/social-preview-v1.jpg` with FFmpeg; no visual retouching.
+
+Use case: ads-marketing. Asset type: finished raster Open Graph link preview for Arin Handyman and Contracting, for sharing the website in WhatsApp and other social apps. Input image 1 is the source carpentry photograph: preserve its believable anonymous carpenter, orange work shirt, oak kitchen cabinets and warm sunlight when placing a photographic crop on the right. Input image 2 is a website style reference only: reuse its cream #f7f4ed, charcoal #282e28 and warm burnt orange #b5441b palette, simple orange square house icon, ARIN. wordmark, and confident readable sans-serif typography. Create a new flat, polished graphic, not a screenshot or device mockup. Wide 1.91:1 landscape composition, ideally exactly 1200 by 630 pixels. Left approximately 60 percent clean warm cream with ample breathing space and very large crisp type, right approximately 40 percent warm carpentry photograph cropped to show the worker and actual cabinetry work. Strong branding must remain legible at thumbnail size. Keep all text at least 55 pixels from image edges. Top-left orange square house icon next to large bold exact wordmark 'ARIN.' with the descriptor 'HANDYMAN & CONTRACTING' directly beneath it. Main headline, on two lines, exactly: 'Your home.' and 'Our handiwork.' Set the first line charcoal, with 'handiwork.' in burnt orange. Lower-left location line exactly 'Halton & the Greater Toronto Area'. Very small but readable footer text exactly 'Website concept · AI-generated imagery'. Thin burnt orange strip along bottom edge. Only the specified text; no phone number, website URL, navigation, buttons, claims, badges, reviews, watermark, frame, or extra words. Correct spelling of ARIN is essential. The photo is conceptual work imagery, not a portrait of Arin or a claimed completed customer project.
+
+## Original website work photographs
+
 Generated with the built-in OpenAI image generation tool. These are fictional inspiration scenes, not customer projects or portraits of Arin. Optimized to WebP with FFmpeg; no visual retouching.
 
 The company name was corrected to **Arin Handyman and Contracting** after generation. The original prompts below preserve the earlier working name for provenance; the photographs contain no business names or logos.

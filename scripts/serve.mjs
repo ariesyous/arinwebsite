@@ -12,6 +12,8 @@ const types = {
   ".js": "text/javascript; charset=utf-8",
   ".svg": "image/svg+xml",
   ".webp": "image/webp",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
 };
 const server = createServer(async (request, response) => {
   if (!["GET", "HEAD"].includes(request.method)) {

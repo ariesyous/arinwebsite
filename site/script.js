@@ -29,7 +29,7 @@ document.addEventListener("click", (event) => {
   if (!header.contains(event.target)) setMenu(false);
 });
 window
-  .matchMedia("(min-width: 1025px)")
+  .matchMedia("(min-width: 1101px)")
   .addEventListener("change", () => setMenu(false));
 window.addEventListener(
   "scroll",
@@ -41,6 +41,7 @@ header.classList.toggle("scrolled", window.scrollY > 20);
 const serviceSelect = document.querySelector("#service");
 document.querySelectorAll("[data-service]").forEach((link) => {
   link.addEventListener("click", () => {
+    if (!serviceSelect) return;
     serviceSelect.value = link.dataset.service;
     serviceSelect.dispatchEvent(new Event("change", { bubbles: true }));
     document.querySelector("#form-result").hidden = true;
@@ -48,17 +49,19 @@ document.querySelectorAll("[data-service]").forEach((link) => {
 });
 const form = document.querySelector("#estimate-form");
 const result = document.querySelector("#form-result");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!form.reportValidity()) return;
-  result.hidden = false;
-  result.focus({ preventScroll: true });
-  result.scrollIntoView({ block: "nearest", behavior: "auto" });
-});
-form.addEventListener("input", () => {
-  result.hidden = true;
-});
-form.addEventListener("change", () => {
-  result.hidden = true;
-});
+if (form && result) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    result.hidden = false;
+    result.focus({ preventScroll: true });
+    result.scrollIntoView({ block: "nearest", behavior: "auto" });
+  });
+  form.addEventListener("input", () => {
+    result.hidden = true;
+  });
+  form.addEventListener("change", () => {
+    result.hidden = true;
+  });
+}
 document.querySelector("#year").textContent = new Date().getFullYear();
