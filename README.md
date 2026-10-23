@@ -20,7 +20,7 @@ Live URL: <https://ariesyous.github.io/arinwebsite/>
 
 Official GitHub Pages actions use the `github-pages` environment and built-in `GITHUB_TOKEN`; no secrets or external hosting are required. Deployments are serialized without interrupting an active publication.
 
-The workflow also checks that generated blog pages and the business plan match their sources before publishing.
+The workflow also checks that generated blog pages, the business plan, and discovery files match their sources before publishing.
 
 When changing styles, increment the stylesheet's `v` query parameter in the HTML so returning visitors receive the updated CSS immediately.
 
@@ -32,10 +32,24 @@ Article source lives in `content/blog/posts.mjs`. To regenerate the static blog 
 
 ```sh
 node scripts/build-blog.mjs
+node scripts/build-discovery.mjs
 node scripts/build-blog.mjs --check
+node scripts/build-discovery.mjs --check
 ```
 
 See [the complete publishing and research workflow](docs/blog-workflow.md) for the article format, editorial standards, validation, and deployment steps. Future agents should start with [AGENTS.md](AGENTS.md). Generated article HTML is committed; the deployed website still has no runtime dependencies.
+
+## Search and agent discovery
+
+- [`site/sitemap.xml`](site/sitemap.xml) lists the canonical homepage, blog index, and every published article using absolute HTTPS URLs. Article `lastmod` values use their editorial `updated` dates; undated pages omit `lastmod` rather than inventing a date on every build.
+- [`site/llms.txt`](site/llms.txt) provides a concise business summary, service-area links, article descriptions, and the site's concept/demo limitations for agents. It follows the [llms.txt proposal](https://llmstxt.org/); it is supplementary guidance, not a promise of indexing or recommendations.
+- [`site/robots.txt`](site/robots.txt) contains permissive project-path rules and the sitemap URL. **GitHub Pages limitation:** the deployed `/arinwebsite/robots.txt` is not an effective robots policy. Crawlers only apply the file at `https://ariesyous.github.io/robots.txt`, which this repository's deployment does not manage. If you manage that origin-root site, merge the generated directives into its robots file without overwriting rules for other projects. See [Google's robots.txt placement guidance](https://developers.google.com/crawling/docs/robots-txt/create-robots-txt).
+
+The homepage and generated blog pages link to the sitemap and llms.txt in their HTML heads. The homepage also has `WebSite` structured data; the blog retains its `Blog` and `BlogPosting` metadata. These describe the existing content without publishing placeholder phone numbers as real contact details. The business plan stays out of discovery files and retains `noindex,nofollow`; do not block its crawling, since crawlers need to read that metadata.
+
+Run `node scripts/build-discovery.mjs` after generating the blog whenever articles, canonical URLs, or discovery copy change, then run `node scripts/build-discovery.mjs --check`. Edit summary wording in the generator when the business information changes; never hand-edit its three generated files. Commit the generator and outputs together. CI rejects missing or stale outputs.
+
+After deployment, verify `/arinwebsite/llms.txt`, `/arinwebsite/sitemap.xml`, and their linked public pages. Submit `https://ariesyous.github.io/arinwebsite/sitemap.xml` in the verified property's Google Search Console and Bing Webmaster Tools; this repository does not submit it automatically. [Google's sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) explains submission and canonical URLs. Standard crawlable content remains the foundation: [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features) does not require special AI files and does not guarantee inclusion.
 
 ## Business plan
 

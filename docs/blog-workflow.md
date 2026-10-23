@@ -8,6 +8,7 @@ Home notes is the blog for Arin Handyman and Contracting. Its purpose is to help
 | ----------------------------- | ----------------------------------------------------------------------------------------- |
 | `content/blog/posts.mjs`      | Source of truth: article metadata, original HTML body, and references.                    |
 | `scripts/build-blog.mjs`      | Dependency-free Node authoring tool and stale-output check.                               |
+| `scripts/build-discovery.mjs` | Generates sitemap.xml, llms.txt, and robots.txt using published articles and the homepage canonical URL. |
 | `site/blog/blog.css`          | Blog-specific layouts and typography; safe to edit directly.                              |
 | `site/blog/index.html`        | Generated index of all articles, newest publication first.                                |
 | `site/blog/<slug>/index.html` | Generated, directly linkable article page.                                                |
@@ -76,7 +77,9 @@ From the repository root:
 
 ```sh
 node scripts/build-blog.mjs
+node scripts/build-discovery.mjs
 node scripts/build-blog.mjs --check
+node scripts/build-discovery.mjs --check
 node --check site/script.js
 git diff --check
 ```
@@ -102,7 +105,7 @@ Review the claims as carefully as the layout. Distinguish your planning suggesti
 
 ## 6. Publish and maintain
 
-Push the tested changes to `main`. The existing GitHub Actions workflow runs the generated-output check before deploying GitHub Pages. Monitor the run and verify the blog index, article, image, and metadata at their public URLs.
+Push the tested changes to `main`. The existing GitHub Actions workflow runs the blog and discovery generated-output checks before deploying GitHub Pages. Monitor the run and verify the blog index, article, image, metadata, sitemap.xml, and llms.txt at their public URLs.
 
 For later revisions, edit the source object and regenerate. Keep its slug stable. Adding a newer article automatically updates the homepage previews; older articles stay on the full index. Do not remove or rename published slugs without planning how existing links will continue to work.
 

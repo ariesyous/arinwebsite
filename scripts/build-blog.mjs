@@ -150,6 +150,7 @@ function layout({ title, description, canonical, prefix, main, post, schema }) {
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f4ed">
   <title>${esc(title)} | ${brand}</title>
   <meta name="description" content="${esc(description)}"><link rel="canonical" href="${canonical}">
+  <link rel="sitemap" type="application/xml" href="${prefix}sitemap.xml"><link rel="describedby" type="text/plain" href="${prefix}llms.txt">
   <meta property="og:type" content="${post ? "article" : "website"}"><meta property="og:locale" content="en_CA"><meta property="og:site_name" content="${brand}">
   <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${socialImage}"><meta property="og:image:secure_url" content="${socialImage}"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
