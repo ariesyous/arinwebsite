@@ -198,15 +198,15 @@ function article(post) {
   <header class="article-heading"><p class="eyebrow">${esc(post.category)} <span>· ${minutes(post)} MIN READ</span></p><h1>${esc(post.title)}</h1><p class="article-lede">${esc(post.excerpt)}</p><p class="article-dates">Arin home notes <span>·</span> Published <time datetime="${post.published}">${dateLabel(post.published)}</time>${post.updated !== post.published ? ` <span>·</span> Updated <time datetime="${post.updated}">${dateLabel(post.updated)}</time>` : ""}</p></header>
   <figure class="article-image"><img src="${prefix}assets/${esc(post.image)}" alt="${esc(post.imageAlt)}" width="1536" height="1024"><figcaption>AI-generated concept imagery, not a completed customer project.</figcaption></figure>
   <div class="article-reading"><div class="article-body">${post.body}</div>
-  <section class="article-sources" aria-labelledby="sources-title"><p class="eyebrow">CHECK THE ORIGINAL GUIDANCE</p><h2 id="sources-title">Sources &amp; further reading</h2><p>Sources checked <time datetime="${post.checked}">${dateLabel(post.checked)}</time>. Manufacturer references explain their own products and systems; inclusion is not an endorsement.</p><ol>${sources}</ol></section>
-  <div class="article-next-step"><h2>What’s next for your home?</h2><p>Start with a clear picture of the work you have in mind.</p><a class="button button-dark" href="${prefix}index.html#contact">Tell us about your project ${arrow}</a></div>
+  <section class="article-sources" aria-labelledby="sources-title"><h2 id="sources-title">Sources &amp; further reading</h2><p>Sources checked <time datetime="${post.checked}">${dateLabel(post.checked)}</time>. Manufacturer references explain their own products and systems; inclusion is not an endorsement.</p><ol>${sources}</ol></section>
+  <div class="article-next-step"><h2>Have a similar job?</h2><p>Describe it in the estimate form, including what you’ve noticed so far.</p><a class="button button-dark" href="${prefix}index.html#contact">Request an estimate ${arrow}</a></div>
   <nav class="article-back" aria-label="More articles"><a class="text-link" href="../">← Browse all home notes</a></nav>
   </div></article>`,
   });
 }
 
 const homepageSection = `<section class="section container home-blog" id="blog" aria-labelledby="blog-title">
-  <div class="section-heading"><div><p class="eyebrow">05 / HOME NOTES</p><h2 id="blog-title">A little know-how.<br><span class="serif">A better place to start.</span></h2></div><div class="blog-heading-copy"><p>Practical guides for planning repairs and improvements, with sources you can check.</p><a class="text-link" href="blog/">Browse all home notes ${arrow}</a></div></div>
+  <div class="section-heading"><h2 id="blog-title">Home notes</h2><div class="blog-heading-copy"><p>Practical guides for planning repairs and improvements, with sources you can check.</p><a class="text-link" href="blog/">Browse all home notes ${arrow}</a></div></div>
   <div class="blog-grid home-blog-grid">${ordered
     .slice(0, 3)
     .map((post) => card(post, ""))
@@ -242,7 +242,7 @@ outputs.set(
         dateModified: post.updated,
       })),
     },
-    main: `<section class="container blog-index"><div class="blog-index-heading"><p class="eyebrow">THE ARIN BLOG / HOME NOTES</p><h1>Good advice.<br><span class="serif">Better projects.</span></h1><p>Understand the repair before choosing the finish. Practical guides for Halton and GTA homeowners, grounded in public guidance and sources you can read for yourself.</p></div><div class="blog-grid">${ordered.map((post) => card(post, "../")).join("\n")}</div><div class="blog-editorial-note"><h2>Useful advice starts with a clear source.</h2><p>These guides use Canadian public guidance, local municipal information, and manufacturer or trade-body references. Each article identifies its sources and when they were checked. Local requirements and the condition of your home still need to be confirmed for your project.</p></div></section>`,
+    main: `<section class="container blog-index"><div class="blog-index-heading"><h1>Home notes</h1><p>Practical guides for Halton and GTA homeowners, based on public guidance and sources you can read for yourself.</p></div><div class="blog-grid">${ordered.map((post) => card(post, "../")).join("\n")}</div><div class="blog-editorial-note"><h2>How these guides are written</h2><p>These guides use Canadian public guidance, local municipal information, and manufacturer or trade-body references. Each article identifies its sources and when they were checked. Local requirements and the condition of your home still need to be confirmed for your project.</p></div></section>`,
   }),
 );
 for (const post of ordered)

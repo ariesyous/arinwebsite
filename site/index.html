@@ -58,7 +58,7 @@
       as="image"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=6" />
     <link rel="stylesheet" href="blog/blog.css?v=1" />
     <script src="script.js?v=3" defer></script>
   </head>
@@ -101,11 +101,6 @@
         <symbol id="i-home" viewBox="0 0 32 32">
           <path d="M3 15 16 4l13 11M7 12v16h18V12M13 28V18h6v10" />
         </symbol>
-        <symbol id="i-spark" viewBox="0 0 32 32">
-          <path
-            d="m16 2 3.8 10.2L30 16l-10.2 3.8L16 30l-3.8-10.2L2 16l10.2-3.8z"
-          />
-        </symbol>
         <symbol id="i-check" viewBox="0 0 24 24">
           <path d="m5 12 4 4L19 6" />
         </symbol>
@@ -117,8 +112,7 @@
 
     <div class="utility-bar">
       <div class="container utility-content">
-        <span>A little care. A better home.</span
-        ><span
+        <span
           ><svg aria-hidden="true" focusable="false" class="icon tiny">
             <use href="#i-pin" />
           </svg>
@@ -152,8 +146,7 @@
           <span></span><span></span>
         </button>
         <nav id="primary-navigation" aria-label="Main navigation">
-          <a href="#services">Services</a><a href="#about">Meet Arin</a
-          ><a href="#inspiration">Project ideas</a
+          <a href="#services">Services</a><a href="#about">About</a
           ><a href="#areas">Service area</a><a href="blog/">Blog</a
           ><a class="button button-dark header-cta" href="#contact"
             >Request an estimate
@@ -168,26 +161,20 @@
       <section class="hero container" id="home" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">
-            <span class="little-line"></span> YOUR NEIGHBOURHOOD HANDYMAN &amp;
-            CONTRACTOR
+            <span class="little-line"></span> HANDYMAN &amp; CONTRACTING
           </p>
           <h1 id="hero-title">
             Your home.<br />Our <span class="orange">handiwork.</span>
           </h1>
           <p class="hero-description">
-            The little fixes. The long-awaited upgrades. Let’s make your space
-            work better, feel better, and feel more like you.
+            Repairs, painting, carpentry, tile, and kitchen and bath updates for
+            homes across Halton and the Greater Toronto Area.
           </p>
           <a class="button button-orange" href="#contact"
-            >Let’s talk about your project
+            >Request an estimate
             <svg aria-hidden="true" focusable="false" class="icon">
               <use href="#i-diagonal" /></svg
           ></a>
-          <div class="hero-note">
-            <svg aria-hidden="true" focusable="false" class="icon">
-              <use href="#i-home" /></svg
-            ><span>From everyday repairs to a fresh start.</span>
-          </div>
         </div>
         <div class="hero-visual">
           <img
@@ -197,31 +184,8 @@
             height="1024"
             fetchpriority="high"
           /><span class="image-label">AI-GENERATED CONCEPT IMAGE</span>
-          <div class="hero-sticker">
-            <svg aria-hidden="true" focusable="false" class="icon">
-              <use href="#i-spark" /></svg
-            ><span>Good work starts<br />with the little details.</span>
-          </div>
-          <span class="hero-edge" aria-hidden="true"
-            >MADE BETTER, ONE DETAIL AT A TIME.</span
-          >
         </div>
       </section>
-
-      <div class="service-ribbon">
-        <div class="container ribbon-inner">
-          <span class="ribbon-intro"
-            >BIG PLANS. SMALL FIXES. WE’RE HERE FOR BOTH.</span
-          ><span>Repairs</span
-          ><span class="ribbon-star" aria-hidden="true">✳</span
-          ><span>Renovations</span
-          ><span class="ribbon-star" aria-hidden="true">✳</span
-          ><span>Home improvements</span
-          ><svg aria-hidden="true" focusable="false" class="icon">
-            <use href="#i-diagonal" />
-          </svg>
-        </div>
-      </div>
 
       <section
         class="section container"
@@ -229,144 +193,135 @@
         aria-labelledby="services-title"
       >
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">01 / WHAT WE CAN HELP WITH</p>
-            <h2 id="services-title">
-              The to-do list?<br />Consider it
-              <span class="serif">handled.</span>
-            </h2>
-          </div>
-          <p>
-            One repair or a room full of possibilities.<br />Find a little help
-            for whatever’s next.
-          </p>
+          <h2 id="services-title">What we can help with</h2>
+          <p>Single repairs or a larger update to a room.</p>
         </div>
         <div class="services-grid">
           <article class="service-card">
             <div class="service-card-top">
               <svg aria-hidden="true" focusable="false" class="service-icon">
-                <use href="#i-hammer" /></svg
-              ><span>01</span>
+                <use href="#i-hammer" />
+              </svg>
             </div>
             <h3>Handyman repairs</h3>
             <p>
-              Loose handles, sticking doors, shelves to hang. A helping hand for
-              the jobs that keep adding up.
+              Sticking doors, loose handles, shelves and fixtures to hang, and
+              the other small jobs on the list.
             </p>
             <a
               href="#contact"
               data-service="Handyman repairs"
               class="service-link"
-              >Let’s fix it
+              >Ask about repairs
               <svg aria-hidden="true" focusable="false" class="icon">
-                <use href="#i-diagonal" /></svg
+                <use href="#i-arrow" /></svg
             ></a>
           </article>
           <article class="service-card">
             <div class="service-card-top">
               <svg aria-hidden="true" focusable="false" class="service-icon">
-                <use href="#i-wall" /></svg
-              ><span>02</span>
+                <use href="#i-wall" />
+              </svg>
             </div>
             <h3>Drywall &amp; finishing</h3>
             <p>
-              Patches, repairs, and smooth finishes. Give your walls a clean
-              foundation for what comes next.
+              Holes, cracks, and old patches repaired and finished so the wall
+              is ready for paint.
             </p>
             <a
               href="#contact"
               data-service="Drywall & finishing"
               class="service-link"
-              >Smooth things over
+              >Ask about drywall
               <svg aria-hidden="true" focusable="false" class="icon">
-                <use href="#i-diagonal" /></svg
+                <use href="#i-arrow" /></svg
             ></a>
           </article>
           <article class="service-card">
             <div class="service-card-top">
               <svg aria-hidden="true" focusable="false" class="service-icon">
-                <use href="#i-paint" /></svg
-              ><span>03</span>
+                <use href="#i-paint" />
+              </svg>
             </div>
             <h3>Painting &amp; refreshes</h3>
             <p>
-              A fresh coat can change the whole feeling. Bring new life to
-              walls, trim, and everyday spaces.
+              Walls, ceilings, trim, and doors, including the cleaning and
+              repairs that come before the paint.
             </p>
             <a
               href="#contact"
               data-service="Painting & refreshes"
               class="service-link"
-              >Freshen it up
+              >Ask about painting
               <svg aria-hidden="true" focusable="false" class="icon">
-                <use href="#i-diagonal" /></svg
+                <use href="#i-arrow" /></svg
             ></a>
           </article>
           <article class="service-card">
             <div class="service-card-top">
               <svg aria-hidden="true" focusable="false" class="service-icon">
-                <use href="#i-carpentry" /></svg
-              ><span>04</span>
+                <use href="#i-carpentry" />
+              </svg>
             </div>
             <h3>Carpentry &amp; details</h3>
             <p>
-              Trim, shelving, cabinetry adjustments, and thoughtful woodwork
-              that pulls a space together.
+              Trim and baseboards, shelving, and cabinet door and hinge
+              adjustments.
             </p>
             <a
               href="#contact"
               data-service="Carpentry & details"
               class="service-link"
-              >Add the finishing touch
+              >Ask about carpentry
               <svg aria-hidden="true" focusable="false" class="icon">
-                <use href="#i-diagonal" /></svg
+                <use href="#i-arrow" /></svg
             ></a>
           </article>
           <article class="service-card">
             <div class="service-card-top">
               <svg aria-hidden="true" focusable="false" class="service-icon">
-                <use href="#i-floor" /></svg
-              ><span>05</span>
+                <use href="#i-floor" />
+              </svg>
             </div>
             <h3>Flooring &amp; tile</h3>
             <p>
-              Step into something better with flooring updates, tile work, and
-              those all-important finishing edges.
+              Flooring updates, tile work, and the trim and transitions at the
+              edges.
             </p>
             <a
               href="#contact"
               data-service="Flooring & tile"
               class="service-link"
-              >Start from the ground up
+              >Ask about flooring or tile
               <svg aria-hidden="true" focusable="false" class="icon">
-                <use href="#i-diagonal" /></svg
+                <use href="#i-arrow" /></svg
             ></a>
           </article>
           <article class="service-card">
             <div class="service-card-top">
               <svg aria-hidden="true" focusable="false" class="service-icon">
-                <use href="#i-home" /></svg
-              ><span>06</span>
+                <use href="#i-home" />
+              </svg>
             </div>
             <h3>Kitchen &amp; bath updates</h3>
             <p>
-              From a few practical changes to a bigger refresh, explore new
-              possibilities for your busiest rooms.
+              A few practical changes or a larger refresh of a kitchen or
+              bathroom.
             </p>
             <a
               href="#contact"
               data-service="Kitchen & bath updates"
               class="service-link"
-              >Reimagine your space
+              >Ask about kitchens or baths
               <svg aria-hidden="true" focusable="false" class="icon">
-                <use href="#i-diagonal" /></svg
+                <use href="#i-arrow" /></svg
             ></a>
           </article>
         </div>
         <div class="services-footer">
-          <span>Something else on your list? Let’s hear it.</span
+          <span>Job not listed here?</span
           ><a class="text-link" href="#contact"
-            >Tell us what you have in mind
+            >Describe it in the estimate form
             <svg aria-hidden="true" focusable="false" class="icon">
               <use href="#i-arrow" /></svg
           ></a>
@@ -376,186 +331,66 @@
       <section class="approach" aria-labelledby="approach-title">
         <div class="container approach-inner">
           <div class="approach-intro">
-            <p class="eyebrow">LESS COMPLICATED. MORE CONSIDERED.</p>
-            <h2 id="approach-title">
-              A better home.<br />A simple
-              <span class="serif">place to start.</span>
-            </h2>
+            <h2 id="approach-title">How it works</h2>
             <p>
-              You don’t need to have every detail figured out.<br />Just an idea
-              of what you’d like to make better.
+              You don’t need a finished plan before getting in touch. A rough
+              description of the job is enough to start.
             </p>
             <a href="#contact" class="button button-cream"
-              >Start the conversation
+              >Describe your project
               <svg aria-hidden="true" focusable="false" class="icon">
-                <use href="#i-diagonal" /></svg
+                <use href="#i-arrow" /></svg
             ></a>
           </div>
           <ol class="steps">
             <li>
-              <span class="step-number">01</span>
+              <span class="step-number">1</span>
               <div>
-                <h3>Tell us about your project.</h3>
+                <h3>Describe the job</h3>
                 <p>
-                  A quick fix or a bigger idea? Share your space, your wish
-                  list, and where you’re located.
+                  Say what needs doing, which room it’s in, and which city
+                  you’re in.
                 </p>
               </div>
             </li>
             <li>
-              <span class="step-number">02</span>
+              <span class="step-number">2</span>
               <div>
-                <h3>Talk through the details.</h3>
+                <h3>Agree on the scope</h3>
                 <p>
-                  Discuss the work, the possibilities, and what a practical next
-                  step could look like.
+                  Go over what’s included, what isn’t, and anything that needs a
+                  closer look before work starts.
                 </p>
               </div>
             </li>
             <li>
-              <span class="step-number">03</span>
+              <span class="step-number">3</span>
               <div>
-                <h3>Make room for better.</h3>
-                <p>
-                  Turn that “one day” project into a clear plan for your home.
-                </p>
+                <h3>Get an estimate</h3>
+                <p>The estimate is based on the scope you agreed.</p>
               </div>
             </li>
           </ol>
         </div>
       </section>
 
-      <section
-        class="section container inspiration"
-        id="inspiration"
-        aria-labelledby="inspiration-title"
-      >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">02 / A LITTLE PROJECT INSPIRATION</p>
-            <h2 id="inspiration-title">
-              Small changes.<br /><span class="serif">Big possibilities.</span>
-            </h2>
-          </div>
-          <p>
-            Picture what’s possible in your space.<br />These AI-generated
-            concepts are here to inspire.
-          </p>
-        </div>
-        <div class="projects-grid">
-          <article class="project project-painting">
-            <div class="project-image">
-              <img
-                src="assets/painting.webp"
-                alt="AI-generated concept of a painter refreshing an interior wall with protective floor coverings."
-                width="1536"
-                height="1024"
-                loading="lazy"
-              /><span class="image-label">CONCEPT IMAGERY</span
-              ><a
-                href="#contact"
-                data-service="Painting & refreshes"
-                class="project-arrow"
-                aria-label="Discuss a painting project"
-                ><svg aria-hidden="true" focusable="false" class="icon">
-                  <use href="#i-diagonal" /></svg
-              ></a>
-            </div>
-            <p class="project-category">PAINTING &amp; FINISHING</p>
-            <h3>A fresh feeling, from wall to wall.</h3>
-          </article>
-          <article class="project project-tiling">
-            <div class="project-image">
-              <img
-                src="assets/tiling.webp"
-                alt="AI-generated concept of a tiler carefully positioning ivory tiles beside an oak bathroom vanity."
-                width="1536"
-                height="1024"
-                loading="lazy"
-              /><span class="image-label">CONCEPT IMAGERY</span
-              ><a
-                href="#contact"
-                data-service="Flooring & tile"
-                class="project-arrow"
-                aria-label="Discuss a flooring or tile project"
-                ><svg aria-hidden="true" focusable="false" class="icon">
-                  <use href="#i-diagonal" /></svg
-              ></a>
-            </div>
-            <p class="project-category">TILE &amp; FLOORING</p>
-            <h3>The details bring it all together.</h3>
-          </article>
-          <article class="project project-deck">
-            <div class="project-image">
-              <img
-                src="assets/deck.webp"
-                alt="AI-generated concept of a carpenter fastening cedar deck boards in a sunny backyard."
-                width="1536"
-                height="1024"
-                loading="lazy"
-              /><span class="image-label">CONCEPT IMAGERY</span
-              ><a
-                href="#contact"
-                data-service="Other home improvement"
-                class="project-arrow"
-                aria-label="Discuss an outdoor improvement project"
-                ><svg aria-hidden="true" focusable="false" class="icon">
-                  <use href="#i-diagonal" /></svg
-              ></a>
-            </div>
-            <p class="project-category">OUTDOOR IMPROVEMENTS</p>
-            <h3>A little more life outside.</h3>
-          </article>
-        </div>
-        <p class="imagery-note">
-          A look at the possibilities, not a portfolio. All photographs on this
-          page are AI-generated concepts, not completed customer projects.
-        </p>
-      </section>
-
       <section class="about-section" id="about" aria-labelledby="about-title">
+        <!-- Add a real photo of Arin and a true sentence or two about Arin's background here. -->
         <div class="container about-inner">
-          <div class="about-graphic" aria-hidden="true">
-            <span class="graphic-eyebrow">ARIN HANDYMAN &amp; CONTRACTING</span
-            ><svg
-              aria-hidden="true"
-              focusable="false"
-              class="graphic-spark"
-              viewBox="0 0 32 32"
-            >
-              <use href="#i-spark" />
-            </svg>
-            <p>
-              Small fixes.<br />Thoughtful upgrades.<br /><span
-                >Fresh possibilities.</span
-              >
-            </p>
-            <div class="graphic-baseline">
-              <span>A LITTLE CARE GOES A LONG WAY.</span
-              ><svg aria-hidden="true" focusable="false" class="icon">
-                <use href="#i-diagonal" />
-              </svg>
-            </div>
-          </div>
+          <h2 id="about-title">About Arin</h2>
           <div class="about-copy">
-            <p class="eyebrow">03 / A NAME BEHIND THE WORK</p>
-            <h2 id="about-title">
-              Hi, we’re Arin.<br />Let’s make your<br /><span class="serif"
-                >house feel like home.</span
-              >
-            </h2>
             <p>
-              Arin Handyman and Contracting is built around a simple idea:
-              taking care of the details that make everyday life at home a
-              little better.
+              Arin Handyman and Contracting takes on home repairs and renovation
+              work for homeowners in Halton and the Greater Toronto Area, from
+              single repairs to kitchen and bathroom updates.
             </p>
             <p>
-              From the repair that’s been waiting to the room ready for a
-              refresh, there’s a place to start. Tell us what you have in mind,
-              and let’s talk through the possibilities.
+              Each job starts with a description of the work. From there we go
+              over what’s involved, including anything that needs a permit, a
+              licensed trade, or a closer look, before preparing an estimate.
             </p>
             <a href="#contact" class="text-link"
-              >Let’s get to know your project
+              >Get in touch
               <svg aria-hidden="true" focusable="false" class="icon">
                 <use href="#i-arrow" /></svg
             ></a>
@@ -569,17 +404,14 @@
         aria-labelledby="areas-title"
       >
         <div class="areas-copy">
-          <p class="eyebrow">04 / RIGHT HERE IN YOUR NEIGHBOURHOOD</p>
-          <h2 id="areas-title">
-            Close to home.<br /><span class="serif">Ready to help.</span>
-          </h2>
+          <h2 id="areas-title">Areas we serve</h2>
           <p>
             Home repairs and improvements across Halton and the Greater Toronto
             Area.
           </p>
           <p class="area-question">
-            Have a project nearby?
-            <a href="#contact">Tell us where you’re located.</a>
+            Nearby but not listed?
+            <a href="#contact">Choose “Another nearby community” in the form.</a>
           </p>
         </div>
         <div class="areas-panel">
@@ -589,23 +421,19 @@
             ><span>HALTON &amp; THE GREATER TORONTO AREA</span>
           </div>
           <ul class="city-list">
-            <li>Milton <span>↗</span></li>
-            <li>Mississauga <span>↗</span></li>
-            <li>Oakville <span>↗</span></li>
-            <li>Brampton <span>↗</span></li>
-            <li>Burlington <span>↗</span></li>
-            <li>Toronto <span>↗</span></li>
+            <li>Milton</li>
+            <li>Mississauga</li>
+            <li>Oakville</li>
+            <li>Brampton</li>
+            <li>Burlington</li>
+            <li>Toronto</li>
           </ul>
-          <div class="areas-panel-bottom">
-            <span class="location-dot"></span> Local projects. A personal
-            approach.
-          </div>
         </div>
       </section>
 
       <!-- BLOG:START -->
 <section class="section container home-blog" id="blog" aria-labelledby="blog-title">
-  <div class="section-heading"><div><p class="eyebrow">05 / HOME NOTES</p><h2 id="blog-title">A little know-how.<br><span class="serif">A better place to start.</span></h2></div><div class="blog-heading-copy"><p>Practical guides for planning repairs and improvements, with sources you can check.</p><a class="text-link" href="blog/">Browse all home notes <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-diagonal"/></svg></a></div></div>
+  <div class="section-heading"><h2 id="blog-title">Home notes</h2><div class="blog-heading-copy"><p>Practical guides for planning repairs and improvements, with sources you can check.</p><a class="text-link" href="blog/">Browse all home notes <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-diagonal"/></svg></a></div></div>
   <div class="blog-grid home-blog-grid"><a class="blog-card" href="blog/draughty-door-repair-or-replace/">
   <div class="blog-card-image"><img src="assets/door-weatherstripping.webp" alt="AI-generated concept of a gloved hand checking the weatherstripping on an open exterior door." width="1536" height="1024" loading="lazy"><span class="image-label">CONCEPT IMAGERY</span></div>
   <div class="blog-card-copy"><p class="blog-category">Home comfort <span>· 3 min read</span></p><h3>A draughty door doesn’t always need replacing</h3><p>Find out where the air is getting in, then separate a worn seal from a door or frame that needs more attention.</p><span class="blog-read">Read the guide <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-diagonal"/></svg></span></div>
@@ -627,15 +455,14 @@
       >
         <div class="container contact-inner">
           <div class="contact-copy">
-            <p class="eyebrow">06 / WHAT’S ON YOUR LIST?</p>
             <h2 id="contact-title">
               Let’s get<br />something<br /><span class="orange serif"
                 >done.</span
               >
             </h2>
             <p>
-              A small repair, a fresh look, or a bigger idea.<br />Your next
-              home project starts with a hello.
+              Describe the job and where you are. The more detail you include,
+              the more useful the first conversation will be.
             </p>
             <div class="contact-detail">
               <svg aria-hidden="true" focusable="false" class="icon">
@@ -663,7 +490,7 @@
               <span class="demo-label">CONCEPT FORM</span>
             </div>
             <p class="form-intro" id="form-explanation">
-              Try the enquiry experience. This demo sends and saves nothing.
+              This is a demo form. It doesn’t send or save anything.
             </p>
             <form
               id="estimate-form"
@@ -738,12 +565,11 @@
                 </div>
                 <div class="field full-width">
                   <label for="project"
-                    >A little about your project
-                    <span aria-hidden="true">*</span></label
+                    >Describe the job <span aria-hidden="true">*</span></label
                   ><textarea
                     id="project"
                     rows="3"
-                    placeholder="What would you like to repair, refresh, or reimagine?"
+                    placeholder="For example: two interior doors stick, and one won’t latch."
                     required
                     maxlength="4000"
                   ></textarea>

@@ -64,7 +64,7 @@ The social preview graphic was created with the same built-in tool using the car
 | `carpentry.webp`             | Carpenter adjusting oak kitchen cabinetry; hero image.           |
 | `painting.webp`              | Painter refreshing a wall with floor protection.                 |
 | `tiling.webp`                | Gloved tiler positioning ivory bathroom tiles.                   |
-| `deck.webp`                  | Carpenter fastening cedar boards in a suburban backyard.         |
+| `deck.webp`                  | Carpenter fastening cedar deck boards; currently unused.         |
 | `door-weatherstripping.webp` | A gloved hand checking an exterior door seal; blog illustration. |
 
 Replace concept imagery and contact details with approved business material when turning this prototype into an operational enquiry website.
