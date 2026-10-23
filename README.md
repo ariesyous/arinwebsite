@@ -55,7 +55,7 @@ Sharing metadata uses absolute HTTPS URLs. When replacing the preview image, use
 
 ## Image provenance
 
-The original four photographs and an additional door-maintenance article illustration were generated specifically for this concept using the built-in OpenAI image generation tool and optimized locally to WebP. Full prompts are in `image-prompts.md`.
+The work photographs, including bathroom and kitchen refreshes, basement framing and drywall, and a door-maintenance article illustration, were generated specifically for this concept using the built-in OpenAI image generation tool and optimized locally to WebP. Full prompts are in `image-prompts.md`.
 
 The social preview graphic was created with the same built-in tool using the carpentry photograph and website branding as references, then resized and encoded as a JPEG.
 
@@ -65,6 +65,9 @@ The social preview graphic was created with the same built-in tool using the car
 | `painting.webp`              | Painter refreshing a wall with floor protection.                 |
 | `tiling.webp`                | Gloved tiler positioning ivory bathroom tiles.                   |
 | `deck.webp`                  | Carpenter fastening cedar boards in a suburban backyard.         |
+| `bathroom-refresh.webp`      | Worker adjusting an oak vanity during a bathroom refresh.        |
+| `kitchen-refresh.webp`       | Worker fitting cabinet trim during a kitchen refresh.            |
+| `basement-drywall.webp`      | Worker taping drywall beside exposed basement partition framing. |
 | `door-weatherstripping.webp` | A gloved hand checking an exterior door seal; blog illustration. |
 
 Replace concept imagery and contact details with approved business material when turning this prototype into an operational enquiry website.
