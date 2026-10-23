@@ -39,6 +39,16 @@ window.addEventListener(
 header.classList.toggle("scrolled", window.scrollY > 20);
 
 const serviceSelect = document.querySelector("#service");
+// Only a known service slug crosses pages. Form entries are never serialized.
+const serviceChoices = new Map([
+  ["handyman-repairs", "Handyman repairs"],
+  ["drywall-repair", "Drywall & finishing"],
+  ["interior-painting", "Painting & refreshes"],
+]);
+const requestedService = serviceChoices.get(
+  new URLSearchParams(window.location.search).get("service"),
+);
+if (serviceSelect && requestedService) serviceSelect.value = requestedService;
 document.querySelectorAll("[data-service]").forEach((link) => {
   link.addEventListener("click", () => {
     if (!serviceSelect) return;

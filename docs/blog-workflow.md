@@ -77,6 +77,7 @@ From the repository root:
 ```sh
 node scripts/build-blog.mjs
 node scripts/build-blog.mjs --check
+node scripts/build-site.mjs --check
 node --check site/script.js
 git diff --check
 ```
@@ -106,4 +107,6 @@ Push the tested changes to `main`. The existing GitHub Actions workflow runs the
 
 For later revisions, edit the source object and regenerate. Keep its slug stable. Adding a newer article automatically updates the homepage previews; older articles stay on the full index. Do not remove or rename published slugs without planning how existing links will continue to work.
 
-For a shared layout change, edit the homepage header/footer or the appropriate stylesheet, update affected CSS/JavaScript cache versions, then regenerate **all** blog pages. For a new social preview image, use a versioned filename and update both homepage metadata and the `socialImage` constant in `scripts/build-blog.mjs`.
+For a shared layout change, edit the homepage header/footer or the appropriate stylesheet, update affected CSS/JavaScript cache versions, then run `node scripts/build-site.mjs` and `node scripts/build-site.mjs --check` to regenerate and validate **all** blog and service pages. For a new social preview image, use a versioned filename and update the `socialImage` constant in `scripts/page-layout.mjs`; the homepage and all generated pages use that shared metadata.
+
+The homepage has a compact text-only preview of the three most recent articles. The blog index retains its illustrated cards. Homepage SEO metadata is generated between `SEO:START` and `SEO:END` from `content/site-config.mjs`. Development mode emits `noindex, follow` on every page; preserve that setting until an explicitly approved launch. Blog content dates remain deliberate editorial records and are not changed by layout or metadata generation.

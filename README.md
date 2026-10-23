@@ -20,7 +20,30 @@ Live URL: <https://ariesyous.github.io/arinwebsite/>
 
 Official GitHub Pages actions use the `github-pages` environment and built-in `GITHUB_TOKEN`; no secrets or external hosting are required. Deployments are serialized without interrupting an active publication.
 
-The workflow also checks that generated blog pages and the business plan match their sources before publishing.
+The workflow checks generated blog, service, and business-plan pages, metadata, internal links, and the indexing policy before publishing.
+
+## Development indexing and local review
+
+`content/site-config.mjs` is the shared source for the business name, base URL, homepage search metadata, and indexing mode. It is deliberately set to `development`. The nine customer-facing HTML pages contain `noindex, follow`; the separate business plan retains its permanent `noindex,nofollow` policy. Crawlers can read these instructions, but supporting search engines should not include these preview pages in results. This is not access control and does not make a public preview private. Do not add a robots.txt crawl block that prevents crawlers from reading `noindex`.
+
+Generate the customer-facing pages and validate all site pages after shared layout, metadata, CSS/JS version, or service changes. The business plan has its own generation and freshness check below:
+
+```sh
+node scripts/build-site.mjs
+node scripts/build-site.mjs --check
+```
+
+The homepage owns the header, footer, icons, and shared asset versions. Its `SEO:START` / `SEO:END` metadata and `BLOG:START` / `BLOG:END` previews are generated; keep both marker pairs. Shared generated-page markup lives in `scripts/page-layout.mjs`. Format source files before generation, and commit sources and generated HTML together.
+
+Previewing locally does not publish anything. If port 4173 is busy, choose a separate port with `PORT` (PowerShell: `$env:PORT='4187'; node scripts/serve.mjs`). Review the printed URL. Pushes to `main` still trigger deployment, so do not push until the local work has been approved.
+
+At an explicitly approved production launch, replace placeholder business material, verify the real contact workflow, set the approved HTTPS `baseUrl`, and deliberately change `indexing` to `production`. Regenerate and check every page, then inspect the deployed robots tags and canonical URLs. Do not switch the current development checkout to production just to test the layout.
+
+## Service pages
+
+Edit `content/services.mjs` for the handyman repairs, drywall repair, and interior painting pages. `scripts/build-services.mjs` generates `site/services/<slug>/index.html`; do not edit those HTML files directly. Each page includes a distinct scope, project-brief checklist, planning questions, and a related homeowner guide. These are service descriptions, not claims about completed projects.
+
+Service-page enquiry links use an allowlisted `?service=<slug>#contact` value to preselect the homepage demo form. Personal form entries are never put into a URL, sent, or stored. Existing published blog slugs and editorial dates are unchanged.
 
 When changing styles, increment the stylesheet's `v` query parameter in the HTML so returning visitors receive the updated CSS immediately.
 
@@ -73,7 +96,7 @@ Sharing metadata uses absolute HTTPS URLs. When replacing the preview image, use
 
 The work photographs, including bathroom and kitchen refreshes, basement framing and drywall, and a door-maintenance article illustration, were generated specifically for this concept using the built-in OpenAI image generation tool and optimized locally to WebP. Full prompts are in `image-prompts.md`.
 
-The social preview graphic was created with the same built-in tool using the carpentry photograph and website branding as references, then resized and encoded as a JPEG.
+The social preview graphic was created with the same built-in tool using the carpentry photograph and website branding as references, then resized and encoded as a JPEG. Its shared filename constant now lives in `scripts/page-layout.mjs`.
 
 | Asset in `site/assets/`      | Subject                                                          |
 | ---------------------------- | ---------------------------------------------------------------- |

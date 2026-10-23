@@ -23,8 +23,8 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v6
-      - name: Check generated blog pages
-        run: node scripts/build-blog.mjs --check
+      - name: Check generated pages and indexing policy
+        run: node scripts/build-site.mjs --check
       - name: Check generated business plan
         run: node scripts/build-business-plan.mjs --check
       - name: Configure GitHub Pages
