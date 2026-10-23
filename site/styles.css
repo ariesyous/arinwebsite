@@ -865,6 +865,7 @@ p {
   align-items: start;
 }
 .contact-copy {
+  min-width: 0;
   padding-top: 10px;
 }
 .contact-copy .eyebrow {
@@ -912,6 +913,7 @@ p {
   letter-spacing: -0.025em;
 }
 .contact-card {
+  min-width: 0;
   background: var(--cream);
   color: var(--ink);
   border-radius: 3px;
@@ -1833,14 +1835,14 @@ p {
     padding-block: 58px;
   }
   .contact-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 37px;
   }
   .contact-copy {
     padding-top: 0;
   }
   .contact-copy h2 {
-    font-size: 73px;
+    font-size: clamp(52px, 18vw, 73px);
   }
   .contact-copy > p:not(.eyebrow) {
     font-size: 14px;
