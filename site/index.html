@@ -58,7 +58,7 @@
       as="image"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="styles.css?v=7" />
     <link rel="stylesheet" href="blog/blog.css?v=1" />
     <script src="script.js?v=3" defer></script>
   </head>
@@ -97,6 +97,9 @@
           <path
             d="m16 3 13 13-13 13L3 16zM9.5 9.5l13 13M9.5 22.5l13-13M6 19l13-13M13 26l13-13"
           />
+        </symbol>
+        <symbol id="i-framing" viewBox="0 0 32 32">
+          <path d="M4 5h24M4 27h24M7 5v22M13 5v22M19 5v22M25 5v22" />
         </symbol>
         <symbol id="i-home" viewBox="0 0 32 32">
           <path d="M3 15 16 4l13 11M7 12v16h18V12M13 28V18h6v10" />
@@ -146,7 +149,8 @@
           <span></span><span></span>
         </button>
         <nav id="primary-navigation" aria-label="Main navigation">
-          <a href="#services">Services</a><a href="#about">About</a
+          <a href="#services">Services</a
+          ><a href="#inspiration">Project ideas</a><a href="#about">About</a
           ><a href="#areas">Service area</a><a href="blog/">Blog</a
           ><a class="button button-dark header-cta" href="#contact"
             >Request an estimate
@@ -317,6 +321,23 @@
                 <use href="#i-arrow" /></svg
             ></a>
           </article>
+          <article class="service-card">
+            <div class="service-card-top">
+              <svg aria-hidden="true" focusable="false" class="service-icon">
+                <use href="#i-framing" />
+              </svg>
+            </div>
+            <h3>Basement framing &amp; drywall</h3>
+            <p>Framing, drywall, and taping for basement projects.</p>
+            <a
+              href="#contact"
+              data-service="Basement framing, drywall & taping"
+              class="service-link"
+              >Ask about basements
+              <svg aria-hidden="true" focusable="false" class="icon">
+                <use href="#i-arrow" /></svg
+            ></a>
+          </article>
         </div>
         <div class="services-footer">
           <span>Job not listed here?</span
@@ -371,6 +392,94 @@
               </div>
             </li>
           </ol>
+        </div>
+      </section>
+
+      <section
+        class="section container inspiration"
+        id="inspiration"
+        aria-labelledby="inspiration-title"
+      >
+        <div class="section-heading">
+          <h2 id="inspiration-title">Project ideas</h2>
+          <p>
+            Concept images of the kinds of work we take on. They are
+            AI-generated, not photos of completed customer projects.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-image">
+              <img
+                src="assets/painting.webp"
+                alt="AI-generated concept of a painter refreshing an interior wall with protective floor coverings."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span>
+            </div>
+            <h3>Painting &amp; finishing</h3>
+          </article>
+          <article class="project">
+            <div class="project-image">
+              <img
+                src="assets/tiling.webp"
+                alt="AI-generated concept of a tiler carefully positioning ivory tiles beside an oak bathroom vanity."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span>
+            </div>
+            <h3>Tile &amp; flooring</h3>
+          </article>
+          <article class="project">
+            <div class="project-image">
+              <img
+                src="assets/deck.webp"
+                alt="AI-generated concept of a carpenter fastening cedar deck boards in a sunny backyard."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span>
+            </div>
+            <h3>Outdoor improvements</h3>
+          </article>
+          <article class="project">
+            <div class="project-image">
+              <img
+                src="assets/bathroom-refresh.webp"
+                alt="AI-generated concept of a worker adjusting an oak vanity in a bright bathroom refresh."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span>
+            </div>
+            <h3>Bathroom renovations &amp; refreshes</h3>
+          </article>
+          <article class="project">
+            <div class="project-image">
+              <img
+                src="assets/kitchen-refresh.webp"
+                alt="AI-generated concept of a worker fitting oak cabinet trim in a light-filled kitchen renovation."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span>
+            </div>
+            <h3>Kitchen renovations &amp; refreshes</h3>
+          </article>
+          <article class="project">
+            <div class="project-image">
+              <img
+                src="assets/basement-drywall.webp"
+                alt="AI-generated concept of a worker taping basement drywall beside an exposed timber-framed partition."
+                width="1536"
+                height="1024"
+                loading="lazy"
+              /><span class="image-label">CONCEPT IMAGERY</span>
+            </div>
+            <h3>Basement framing, drywall &amp; taping</h3>
+          </article>
         </div>
       </section>
 
@@ -559,6 +668,7 @@
                     <option>Carpentry &amp; details</option>
                     <option>Flooring &amp; tile</option>
                     <option>Kitchen &amp; bath updates</option>
+                    <option>Basement framing, drywall &amp; taping</option>
                     <option>Other home improvement</option>
                     <option>Not sure yet</option>
                   </select>
