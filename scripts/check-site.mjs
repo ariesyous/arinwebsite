@@ -23,9 +23,12 @@ for (const page of pages) {
   const robotTags = [
     ...html.matchAll(/<meta name="robots" content="([^"]*)"/g),
   ];
+  // The family planning document stays excluded even after a production launch.
+  const expectedRobots =
+    path === "business-plan/index.html" ? "noindex,nofollow" : robots;
   report(
-    robotTags.length === 1 && robotTags[0][1] === robots,
-    `Expected one robots tag: ${robots}`,
+    robotTags.length === 1 && robotTags[0][1] === expectedRobots,
+    `Expected one robots tag: ${expectedRobots}`,
   );
   const canonical = html.match(/<link rel="canonical" href="([^"]*)"/)?.[1];
   report(

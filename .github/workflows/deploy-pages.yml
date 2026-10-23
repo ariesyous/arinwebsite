@@ -25,6 +25,8 @@ jobs:
         uses: actions/checkout@v6
       - name: Check generated pages and indexing policy
         run: node scripts/build-site.mjs --check
+      - name: Check generated business plan
+        run: node scripts/build-business-plan.mjs --check
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static website
