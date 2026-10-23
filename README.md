@@ -20,6 +20,8 @@ Live URL: <https://ariesyous.github.io/arinwebsite/>
 
 Official GitHub Pages actions use the `github-pages` environment and built-in `GITHUB_TOKEN`; no secrets or external hosting are required. Deployments are serialized without interrupting an active publication.
 
+When changing styles, increment the stylesheet's `v` query parameter in the HTML so returning visitors receive the updated CSS immediately.
+
 ## Concept details
 
 - `(416) 555-0148` is a clearly marked placeholder, not a call link.
