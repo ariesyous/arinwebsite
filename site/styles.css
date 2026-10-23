@@ -434,6 +434,7 @@ p {
 }
 .hero-edge {
   position: absolute;
+  white-space: nowrap;
   top: 50%;
   right: -31px;
   writing-mode: vertical-rl;
