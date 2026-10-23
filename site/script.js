@@ -29,7 +29,7 @@ document.addEventListener("click", (event) => {
   if (!header.contains(event.target)) setMenu(false);
 });
 window
-  .matchMedia("(min-width: 681px)")
+  .matchMedia("(min-width: 1025px)")
   .addEventListener("change", () => setMenu(false));
 window.addEventListener(
   "scroll",
