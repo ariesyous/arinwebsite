@@ -39,7 +39,7 @@ See [the complete publishing and research workflow](docs/blog-workflow.md) for t
 
 ## Business plan
 
-The family planning document lives at <https://ariesyous.github.io/arinwebsite/business-plan/>. It is intentionally absent from customer navigation and blog listings and carries `noindex,nofollow` metadata. It is still public, as is this repository; never add customer information, private credentials, or personal financial records.
+The business plan is written directly for Arin, the business owner, and lives at <https://ariesyous.github.io/arinwebsite/business-plan/>. Keep its advice addressed to him as “you” and treat outside setup/support help as optional and agreed, without assigning an ongoing role to a family member. It is intentionally absent from customer navigation and blog listings and carries `noindex,nofollow` metadata. It is still public, as is this repository; never add customer information, private credentials, or personal financial records.
 
 Edit `docs/business-plan.md`, then regenerate the matching static HTML:
 
