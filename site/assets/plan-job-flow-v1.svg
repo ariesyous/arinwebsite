@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="918" viewBox="0 0 360 918" role="img" aria-labelledby="title desc">
+<title id="title">From request to payment</title>
+<desc id="desc">Customer enquiry, scope and accepted price, booking, approved work, reviewed invoice, then confirmed payment.</desc>
+<rect width="360" height="918" fill="#fff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#000" text-anchor="middle">
+<text x="180" y="37" font-size="24" font-weight="700">From request to payment</text>
+<rect x="16" y="65" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="95" font-size="22" font-weight="700">1. Get the details</text>
+<text x="180" y="123" font-size="22">Task list, location, photos</text>
+<text x="180" y="149" font-size="22">from your customer</text>
+<path d="M180 164v23m-6-7 6 7 6-7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="189" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="219" font-size="22" font-weight="700">2. Agree the job</text>
+<text x="180" y="247" font-size="22">You approve the price;</text>
+<text x="180" y="273" font-size="22">your customer accepts</text>
+<path d="M180 288v23m-6-7 6 7 6-7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="313" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="343" font-size="22" font-weight="700">3. Book the visit</text>
+<text x="180" y="371" font-size="22">Confirm the time</text>
+<text x="180" y="397" font-size="22">and allow for travel</text>
+<path d="M180 412v23m-6-7 6 7 6-7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="437" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="467" font-size="22" font-weight="700">4. Do the work</text>
+<text x="180" y="495" font-size="22">Get extra work approved</text>
+<text x="180" y="521" font-size="22">before you do it</text>
+<path d="M180 536v23m-6-7 6 7 6-7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="561" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="591" font-size="22" font-weight="700">5. Review the invoice</text>
+<text x="180" y="619" font-size="22">Confirm completion</text>
+<text x="180" y="645" font-size="22">and the amount due</text>
+<path d="M180 660v23m-6-7 6 7 6-7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="685" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="715" font-size="22" font-weight="700">6. Collect and follow up</text>
+<text x="180" y="743" font-size="22">Check payment received;</text>
+<text x="180" y="769" font-size="22">track the bank deposit</text>
+<text x="180" y="817" font-size="22">You approve the decisions.</text>
+<text x="180" y="844" font-size="22">Software helps with admin.</text>
+</g>
+</svg>

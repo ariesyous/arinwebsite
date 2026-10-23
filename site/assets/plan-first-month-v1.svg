@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="670" viewBox="0 0 360 670" role="img" aria-labelledby="title desc">
+<title id="title">Your first 30 days</title>
+<desc id="desc">Define and prepare, rehearse the process, do a few jobs, then improve using actual results.</desc>
+<rect width="360" height="670" fill="#fff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#000" text-anchor="middle">
+<text x="180" y="37" font-size="24" font-weight="700">Your first 30 days</text>
+<rect x="16" y="65" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="95" font-size="22" font-weight="700">1. Define + prepare</text>
+<text x="180" y="123" font-size="22">Choose your jobs;</text>
+<text x="180" y="149" font-size="22">resolve launch checks</text>
+<path d="M180 164v23m-6-7 6 7 6-7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="189" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="219" font-size="22" font-weight="700">2. Rehearse + open</text>
+<text x="180" y="247" font-size="22">Try a pretend job;</text>
+<text x="180" y="273" font-size="22">then seek referrals</text>
+<path d="M180 288v23m-6-7 6 7 6-7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="313" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="343" font-size="22" font-weight="700">3. Do a few jobs</text>
+<text x="180" y="371" font-size="22">Record time, costs</text>
+<text x="180" y="397" font-size="22">and customer feedback</text>
+<path d="M180 412v23m-6-7 6 7 6-7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="437" width="328" height="98" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="467" font-size="22" font-weight="700">4. Review + improve</text>
+<text x="180" y="495" font-size="22">After ten paid jobs,</text>
+<text x="180" y="521" font-size="22">adjust prices and tools</text>
+<text x="180" y="569" font-size="22">Paid work starts after</text>
+<text x="180" y="596" font-size="22">launch checks are resolved.</text>
+</g>
+</svg>

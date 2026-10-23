@@ -81,6 +81,8 @@ Use a separate business money trail and keep receipts against jobs. Have an acco
 
 ## A phone-first job from enquiry to payment
 
+![Your job in six steps: get the details, agree the scope and price, book a visit, do the approved work, review the invoice, then confirm payment and follow up.](../site/assets/plan-job-flow-v1.svg)
+
 Keep one private job record with contact details, address, scope/photos, accepted quote version, appointment, change approvals, time/materials, completion and payment status. You make the job decisions and handle customer exceptions. If you want help setting up or fixing the tools, agree the task, time commitment and any cost upfront. Your routine bookings and paperwork should be manageable from your own phone.
 
 | Stage | You and your customer | Software's useful role |
@@ -113,6 +115,8 @@ These examples show two ways you could manage a day from your phone. Try both an
 The screen is more structured and easier to validate. Voice can be easier while working, but transcription, identifying the right job and messaging integration add cost and failure points. The cheapest pilot can use the phone's existing dictation inside a private job form. Free consumer messaging alone does not provide a reliable automated business inbox.
 
 ## Buy outcomes, not a pile of apps
+
+![You choose the jobs, approve prices and changes, do the work and resolve concerns. Software organizes details, drafts paperwork, sends agreed reminders and flags problems.](../site/assets/plan-roles-v1.svg)
 
 Use ordinary rules for totals, statuses and reminders. AI can help draft scope or summarize notes, with human review. A custom build can make the interface simple; running AI, phone/SMS services and maintaining the system are separate commitments. The operational system is a later project, not something installed by publishing this report.
 
@@ -181,6 +185,8 @@ Use these checks to confirm what is already in place and what you still need for
 One practical setup task: take the proposed five services and home-base/storage/vehicle arrangements to Halton Hills Licensing and Zoning. Keep the confirmation with business records. Recheck requirements before expanding into another municipality or changing the work/client mix.
 
 ## The first 30 days
+
+![Your launch in four stages: define services and resolve launch checks, rehearse and seek referrals, do a few jobs, then review actual results after ten paid jobs. Paid work starts only after the relevant checks are resolved.](../site/assets/plan-first-month-v1.svg)
 
 Treat this as a sequence, not a promise to finish municipal or insurance approvals in a week. Paid work starts only after the relevant setup checks are resolved.
 

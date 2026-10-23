@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="574" viewBox="0 0 360 574" role="img" aria-labelledby="title desc">
+<title id="title">You decide. Software helps.</title>
+<desc id="desc">You choose suitable jobs, approve prices and changes, do the work and resolve concerns. Software organizes details, drafts paperwork, reminds people and flags unpaid or failed items. These are proposed capabilities, not an installed system.</desc>
+<rect width="360" height="574" fill="#fff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#000" text-anchor="middle">
+<text x="180" y="37" font-size="24" font-weight="700">You decide. Software helps.</text>
+<rect x="16" y="63" width="328" height="190" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="101" font-size="24" font-weight="700">YOU, ARIN</text>
+<text x="180" y="142" font-size="22">Choose suitable jobs</text>
+<text x="180" y="173" font-size="22">Approve prices + changes</text>
+<text x="180" y="204" font-size="22">Do and check the work</text>
+<text x="180" y="235" font-size="22">Resolve customer concerns</text>
+<path d="M164 264v33m-6-7 6 7 6-7M196 297v-33m-6 7 6-7 6 7" fill="none" stroke="#000" stroke-width="2"/>
+<rect x="16" y="310" width="328" height="190" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="180" y="348" font-size="24" font-weight="700">SOFTWARE</text>
+<text x="180" y="389" font-size="22">Keep job details together</text>
+<text x="180" y="420" font-size="22">Draft quotes + invoices</text>
+<text x="180" y="451" font-size="22">Send agreed reminders</text>
+<text x="180" y="482" font-size="22">Flag what needs attention</text>
+<text x="180" y="539" font-size="21">A proposed setup, built in stages.</text>
+</g>
+</svg>

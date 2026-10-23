@@ -171,6 +171,7 @@ export function renderMarkdown(markdown) {
     lines[index + 1]?.includes("|") &&
     cells(lines[index + 1]).every((cell) => /^:?-{3,}:?$/.test(cell));
   const startsBlock = (index) =>
+    lines[index]?.startsWith("![") ||
     /^(?:#{1,6}\s|```|~~~|>\s|\s{2,}[-*]\s)/.test(lines[index]) ||
     listItem(lines[index]) ||
     isTable(index);
@@ -186,6 +187,18 @@ export function renderMarkdown(markdown) {
       !/^(?:```|~~~|>\s|\s+[-*]\s|\s+\d+\.\s)/.test(line),
       `Unsupported block at line ${i + 1}; use paragraphs, flat lists, headings, or tables`,
     );
+    const diagram = line.match(/^!\[([^\]]+)\]\(\.\.\/site\/assets\/([a-z0-9-]+\.svg)\)$/);
+    if (line.startsWith("![")) {
+      assert(diagram, `Use a local SVG diagram with descriptive alt text (line ${i + 1})`);
+      const asset = resolve(root, "site/assets", diagram[2]);
+      assert(existsSync(asset), `Missing diagram: ${diagram[2]}`);
+      const svg = readFileSync(asset, "utf8");
+      const size = svg.match(/viewBox="0 0 (\d+) (\d+)"/);
+      assert(size, `Diagram needs a numeric viewBox: ${diagram[2]}`);
+      blocks.push(`<figure class="plan-diagram"><img src="../assets/${diagram[2]}" alt="${escape(diagram[1])}" width="${size[1]}" height="${size[2]}" loading="lazy" decoding="async"></figure>`);
+      i += 1;
+      continue;
+    }
     const heading = line.match(/^(#{1,6})\s+(.+)$/);
     if (heading) {
       const level = heading[1].length;
@@ -353,6 +366,9 @@ li::marker { color: var(--orange); font-weight: 700; }
 code { font: .88em/1.6 Consolas, "Courier New", monospace; background: #eaece3; padding: .15em .3em; border-radius: 3px; overflow-wrap: anywhere; }
 .table-scroll { width: 100%; overflow-x: auto; margin: 25px 0; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); }
 .table-hint { display: none; }
+.plan-diagram { margin: 32px auto; max-width: 420px; break-inside: avoid; }
+.plan-diagram img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid #000; border-radius: 6px; }
+@media print { .plan-diagram { max-width: 85mm; } }
 table { width: 100%; border-collapse: collapse; font-size: 18px; line-height: 1.55; }
 th, td { padding: 15px 17px; vertical-align: top; text-align: left; overflow-wrap: anywhere; min-width: 145px; }
 th { background: #e9ece2; font-weight: 700; font-size: 16px; }
