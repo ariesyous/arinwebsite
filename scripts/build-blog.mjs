@@ -8,7 +8,9 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const site = resolve(root, "site");
 const base = "https://ariesyous.github.io/arinwebsite/";
 const brand = "Arin Handyman and Contracting";
-const socialImage = `${base}assets/social-preview-v1.jpg`;
+const socialImage = `${base}assets/social-preview-v2.jpg`;
+const socialImageAlt =
+  "Arin Handyman and Contracting — Home repairs and renovations across Halton and the Greater Toronto Area, with AI-generated concept carpentry imagery.";
 const check = process.argv.includes("--check");
 const homePath = resolve(site, "index.html");
 const home = readFileSync(homePath, "utf8");
@@ -151,9 +153,9 @@ function layout({ title, description, canonical, prefix, main, post, schema }) {
   <meta property="og:type" content="${post ? "article" : "website"}"><meta property="og:locale" content="en_CA"><meta property="og:site_name" content="${brand}">
   <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${socialImage}"><meta property="og:image:secure_url" content="${socialImage}"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Arin Handyman and Contracting — Your home. Our handiwork. Conceptual carpentry imagery.">
+  <meta property="og:image:alt" content="${esc(socialImageAlt)}">
 ${post ? `  <meta property="article:published_time" content="${post.published}"><meta property="article:modified_time" content="${post.updated}">` : ""}
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="twitter:image:alt" content="Arin Handyman and Contracting branded website concept preview.">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="twitter:image:alt" content="${esc(socialImageAlt)}">
   <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${prefix}${stylesheet}"><link rel="stylesheet" href="${prefix}blog/blog.css?v=1"><script src="${prefix}${script}" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
 </head>

@@ -41,7 +41,7 @@ See [the complete publishing and research workflow](docs/blog-workflow.md) for t
 
 The homepage includes static Open Graph and large-image Twitter Card metadata with the business name, description, canonical URL, image dimensions, and descriptive alternative text. Sharing crawlers can read these directly from the HTML without running JavaScript.
 
-The branded image is `site/assets/social-preview-v1.jpg`, a 1200 × 630 JPEG, available at <https://ariesyous.github.io/arinwebsite/assets/social-preview-v1.jpg>. It combines the site's cream, orange, and charcoal branding with conceptual carpentry imagery and identifies the image as a website concept. Its generation prompt is recorded in `image-prompts.md`.
+The branded image is `site/assets/social-preview-v2.jpg`, a 1200 × 630 JPEG, available at <https://ariesyous.github.io/arinwebsite/assets/social-preview-v2.jpg>. It matches the simplified website with cream, orange, and charcoal branding, plain “Home repairs & renovations” wording, the service area, and a clean photographic crop labelled as AI-generated concept imagery. Its generation prompt is recorded in `image-prompts.md`. The earlier `social-preview-v1.jpg` remains available for older cached links.
 
 Sharing metadata uses absolute HTTPS URLs. When replacing the preview image, use a new versioned filename and update both the Open Graph and Twitter image tags together to avoid reusing an old image URL.
 
