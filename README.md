@@ -1,4 +1,4 @@
-# Rene Handyman and Contracting
+# Arin Handyman and Contracting
 
 A responsive, front-end-only concept for home repairs and renovations across Halton and the Greater Toronto Area.
 
@@ -24,7 +24,7 @@ Official GitHub Pages actions use the `github-pages` environment and built-in `G
 
 - `(416) 555-0148` is a clearly marked placeholder, not a call link.
 - The form validates locally and displays a demo confirmation. It sends no requests and stores no personal information. Inputs have no `name` attributes, preventing native form serialization if JavaScript is unavailable.
-- Photographs are AI-generated inspiration, not photographs of Rene or completed customer projects; the page labels them accordingly.
+- Photographs are AI-generated inspiration, not photographs of Arin or completed customer projects; the page labels them accordingly.
 - No fabricated testimonials, credentials, experience figures, or guarantees.
 - Relative asset paths support project-path hosting. No runtime dependencies, trackers, remote fonts, third-party scripts, or external APIs.
 

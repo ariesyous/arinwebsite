@@ -1,6 +1,8 @@
 # Image generation prompts
 
-Generated with the built-in OpenAI image generation tool. These are fictional inspiration scenes, not customer projects or portraits of Rene. Optimized to WebP with FFmpeg; no visual retouching.
+Generated with the built-in OpenAI image generation tool. These are fictional inspiration scenes, not customer projects or portraits of Arin. Optimized to WebP with FFmpeg; no visual retouching.
+
+The company name was corrected to **Arin Handyman and Contracting** after generation. The original prompts below preserve the earlier working name for provenance; the photographs contain no business names or logos.
 
 ## carpentry
 
