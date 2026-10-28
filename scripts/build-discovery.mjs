@@ -54,21 +54,21 @@ ${pages.map(({ path, lastmod }) => `  <url><loc>${esc(`${base}${path}`)}</loc>${
 `;
 const llms = `# Arin Handyman and Contracting
 
-> Home repairs and renovations across Halton and the Greater Toronto Area, Ontario, Canada. This is a front-end-only website concept with researched homeowner guides.
+> Home repairs and renovations across Halton and the Greater Toronto Area, Ontario, Canada. Homeowner guides cover planning repairs and improvements.
 
 The service categories shown are handyman repairs, drywall and finishing, painting and refreshes, carpentry and details, flooring and tile, kitchen and bath updates, and basement framing and drywall. Listed communities include Milton, Mississauga, Oakville, Brampton, Burlington, and Toronto.
 
-Contact details are placeholders. The estimate form is a demonstration: it does not transmit or store entries and cannot book work or request a real estimate. Images are labelled AI-generated concepts, not completed customer projects. The site does not establish verified trade licences, credentials, reviews, prices, or guarantees.
+Project enquiries: arinhandyman@gmail.com. The contact section displays this business email address and opens the visitor’s email app; the website has no submission form, booking, or payment system. No phone number is published. The site makes no claims about trade licences, credentials, reviews, prices, or guarantees.
 
 Home notes articles provide general planning guidance, with numbered source citations and deliberate publication, update, and source-check dates. Read each article's qualifications and original sources before relying on guidance for a specific property or municipality.
 
 ## Business information
 
-- [Homepage](${base}): Business overview and website concept status.
+- [Homepage](${base}): Business overview and project enquiries.
 - [Services](${base}#services): Descriptions of the service categories shown on the site.
 - [Service area](${base}#areas): Halton and Greater Toronto Area communities listed on the site.
 - [About Arin](${base}#about): The site's business introduction.
-- [Contact demonstration](${base}#contact): Placeholder contact details and non-submitting demo form.
+- [Contact](${base}#contact): Business email address and details to include in a project enquiry.
 
 ## Homeowner guides
 

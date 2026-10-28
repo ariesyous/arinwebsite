@@ -5,13 +5,13 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = resolve(root, "docs/business-plan.md");
-const outputPath = resolve(root, "site/business-plan/index.html");
+const outputPath = resolve(root, "docs/business-plan/index.html");
 const canonical = "https://ariesyous.github.io/arinwebsite/business-plan/";
 const brand = "Arin Handyman and Contracting";
 const socialImage =
-  "https://ariesyous.github.io/arinwebsite/assets/social-preview-v2.jpg";
+  "https://ariesyous.github.io/arinwebsite/assets/social-preview-v3.jpg";
 const socialAlt =
-  "Arin Handyman and Contracting — Home repairs and renovations across Halton and the Greater Toronto Area, with AI-generated concept carpentry imagery.";
+  "Arin Handyman and Contracting — Home repairs and renovations across Halton and the Greater Toronto Area.";
 
 const escape = (value) =>
   String(value)
@@ -187,10 +187,10 @@ export function renderMarkdown(markdown) {
       !/^(?:```|~~~|>\s|\s+[-*]\s|\s+\d+\.\s)/.test(line),
       `Unsupported block at line ${i + 1}; use paragraphs, flat lists, headings, or tables`,
     );
-    const diagram = line.match(/^!\[([^\]]+)\]\(\.\.\/site\/assets\/([a-z0-9-]+\.svg)\)$/);
+    const diagram = line.match(/^!\[([^\]]+)\]\(assets\/([a-z0-9-]+\.svg)\)$/);
     if (line.startsWith("![")) {
       assert(diagram, `Use a local SVG diagram with descriptive alt text (line ${i + 1})`);
-      const asset = resolve(root, "site/assets", diagram[2]);
+      const asset = resolve(root, "docs/assets", diagram[2]);
       assert(existsSync(asset), `Missing diagram: ${diagram[2]}`);
       const svg = readFileSync(asset, "utf8");
       const size = svg.match(/viewBox="0 0 (\d+) (\d+)"/);
@@ -413,7 +413,7 @@ export function renderDocument(markdown) {
   <title>${escape(title)}</title>
   <meta name="description" content="${escape(description)}">
   <link rel="canonical" href="${canonical}">
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../site/assets/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_CA">
   <meta property="og:site_name" content="${brand}">
@@ -435,7 +435,7 @@ export function renderDocument(markdown) {
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to document</a>
-  <header class="masthead"><div class="masthead-inner"><a class="brand" href="../">${brand}</a><a class="site-link" href="../">View website ↗</a></div></header>
+  <header class="masthead"><div class="masthead-inner"><a class="brand" href="../../site/index.html">${brand}</a><a class="site-link" href="../../site/index.html">View website ↗</a></div></header>
   <main id="main">
 ${doc.intro}
     <div class="report-layout">
@@ -466,17 +466,17 @@ function build() {
   if (args.includes("--check")) {
     assert(
       existsSync(outputPath),
-      "Missing generated page: site/business-plan/index.html. Run: node scripts/build-business-plan.mjs",
+      "Missing generated page: docs/business-plan/index.html. Run: node scripts/build-business-plan.mjs",
     );
     assert(
       readFileSync(outputPath, "utf8").replaceAll("\r\n", "\n") === expected,
-      "Generated business plan is stale: site/business-plan/index.html. Run: node scripts/build-business-plan.mjs",
+      "Generated business plan is stale: docs/business-plan/index.html. Run: node scripts/build-business-plan.mjs",
     );
     console.log("Verified business-plan HTML matches docs/business-plan.md.");
   } else {
     mkdirSync(dirname(outputPath), { recursive: true });
     writeFileSync(outputPath, expected);
-    console.log("Generated site/business-plan/index.html from docs/business-plan.md.");
+    console.log("Generated docs/business-plan/index.html from docs/business-plan.md.");
   }
 }
 

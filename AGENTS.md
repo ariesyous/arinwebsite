@@ -6,8 +6,9 @@ This is a static website for **Arin Handyman and Contracting**, serving Halton a
 
 - Read `README.md`. For blog work, also read `docs/blog-workflow.md`.
 - The publishing root is `site/`. GitHub Actions deploys it to `https://ariesyous.github.io/arinwebsite/` on pushes to `main`.
-- Keep the site front-end only. Contact details are placeholders; the estimate form must not transmit or store entries.
-- Do not invent completed projects, customer reviews, credentials, years of experience, service guarantees, prices, or an individual expert author. Images are labelled AI-generated concepts.
+- Keep the site front-end only. The approved enquiry address is `arinhandyman@gmail.com`; display it with a `mailto:` link. No contact form, public phone number, backend, or stored enquiries are configured.
+- Do not invent completed projects, customer reviews, credentials, years of experience, service guarantees, prices, or an individual expert author. The public site has no generated project photos; use only approved, permissioned business photos if adding photography.
+- Keep draft business planning outside `site/`. Its old `/business-plan/` URL redirects to the homepage; the report is generated at `docs/business-plan/index.html` and is not part of the deployment.
 
 ## Blog source and generated output
 
@@ -33,3 +34,4 @@ This is a static website for **Arin Handyman and Contracting**, serving Halton a
 - When changing CSS or JavaScript, increment its cache version in the homepage and regenerate the blog. When changing a social image, use a new versioned image filename and update all sharing tags, including the generator's shared-image constant.
 - Format source files before generation; formatting generated HTML afterward makes it stale. Run the generator again if needed.
 - Check relevant desktop and phone layouts, links, citations, images, browser errors, and sharing metadata. After publishing, monitor the Actions run and verify the live URLs.
+- Run `node scripts/check-site.mjs` before publishing. CI checks local links, contact links, metadata, and the absence of demo content and forms.

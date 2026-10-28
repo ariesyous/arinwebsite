@@ -8,9 +8,9 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const site = resolve(root, "site");
 const base = "https://ariesyous.github.io/arinwebsite/";
 const brand = "Arin Handyman and Contracting";
-const socialImage = `${base}assets/social-preview-v2.jpg`;
+const socialImage = `${base}assets/social-preview-v3.jpg`;
 const socialImageAlt =
-  "Arin Handyman and Contracting — Home repairs and renovations across Halton and the Greater Toronto Area, with AI-generated concept carpentry imagery.";
+  "Arin Handyman and Contracting — Home repairs and renovations across Halton and the Greater Toronto Area.";
 const check = process.argv.includes("--check");
 const homePath = resolve(site, "index.html");
 const home = readFileSync(homePath, "utf8");
@@ -54,7 +54,7 @@ for (const post of posts) {
   );
   assert(!seen.has(post.slug), `Duplicate slug: ${post.slug}`);
   seen.add(post.slug);
-  for (const field of ["title", "category", "excerpt", "imageAlt", "body"])
+  for (const field of ["title", "category", "excerpt", "body"])
     assert(
       typeof post[field] === "string" && post[field].trim(),
       `${post.slug}: missing ${field}`,
@@ -64,14 +64,6 @@ for (const post of posts) {
   assert(
     post.updated >= post.published && post.checked <= post.updated,
     `${post.slug}: inconsistent review dates`,
-  );
-  assert(
-    /^[a-z0-9-]+\.(webp|jpg|png)$/.test(post.image),
-    `${post.slug}: use a local image filename`,
-  );
-  assert(
-    existsSync(resolve(site, "assets", post.image)),
-    `${post.slug}: missing image ${post.image}`,
   );
   assert(
     post.sources.length >= 2,
@@ -127,18 +119,19 @@ function sharedLinks(markup, prefix, current = false) {
   return markup.replace(
     /(<a\b[^>]*\bhref=")([^"]+)(")/g,
     (match, before, href, after) => {
-      const rewritten = /class="back-top"/.test(before)
-        ? "#main"
-        : href.startsWith("#")
-          ? `${prefix}index.html${href}`
-          : `${prefix}${href}`;
+      const rewritten = /^(?:https?:|mailto:|tel:)/.test(href)
+        ? href
+        : /class="back-top"/.test(before)
+          ? "#main"
+          : href.startsWith("#")
+            ? `${prefix}index.html${href}`
+            : `${prefix}${href}`;
       return `${before}${rewritten}${after}${current && href === "blog/" ? ' aria-current="page"' : ""}`;
     },
   );
 }
 function card(post, prefix) {
   return `<a class="blog-card" href="${prefix}blog/${post.slug}/">
-  <div class="blog-card-image"><img src="${prefix}assets/${esc(post.image)}" alt="${esc(post.imageAlt)}" width="1536" height="1024" loading="lazy"><span class="image-label">CONCEPT IMAGERY</span></div>
   <div class="blog-card-copy"><p class="blog-category">${esc(post.category)} <span>· ${minutes(post)} min read</span></p><h3>${esc(post.title)}</h3><p>${esc(post.excerpt)}</p><span class="blog-read">Read the guide ${arrow}</span></div>
 </a>`;
 }
@@ -157,7 +150,7 @@ function layout({ title, description, canonical, prefix, main, post, schema }) {
   <meta property="og:image:alt" content="${esc(socialImageAlt)}">
 ${post ? `  <meta property="article:published_time" content="${post.published}"><meta property="article:modified_time" content="${post.updated}">` : ""}
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="twitter:image:alt" content="${esc(socialImageAlt)}">
-  <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${prefix}${stylesheet}"><link rel="stylesheet" href="${prefix}blog/blog.css?v=1"><script src="${prefix}${script}" defer></script>
+  <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${prefix}${stylesheet}"><link rel="stylesheet" href="${prefix}blog/blog.css?v=2"><script src="${prefix}${script}" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
 </head>
 <body class="blog-page"><a class="skip-link" href="#main">Skip to content</a>
@@ -191,7 +184,7 @@ function article(post) {
       datePublished: post.published,
       dateModified: post.updated,
       mainEntityOfPage: canonical,
-      image: `${base}assets/${post.image}`,
+      image: socialImage,
       author: { "@type": "Organization", name: brand },
       publisher: { "@type": "Organization", name: brand, url: base },
       citation: post.sources.map((source) => source.url),
@@ -199,10 +192,9 @@ function article(post) {
     main: `<article class="article-shell container">
   <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${prefix}index.html">Home</a><span aria-hidden="true">/</span><a href="../">Home notes</a></nav>
   <header class="article-heading"><p class="eyebrow">${esc(post.category)} <span>· ${minutes(post)} MIN READ</span></p><h1>${esc(post.title)}</h1><p class="article-lede">${esc(post.excerpt)}</p><p class="article-dates">Arin home notes <span>·</span> Published <time datetime="${post.published}">${dateLabel(post.published)}</time>${post.updated !== post.published ? ` <span>·</span> Updated <time datetime="${post.updated}">${dateLabel(post.updated)}</time>` : ""}</p></header>
-  <figure class="article-image"><img src="${prefix}assets/${esc(post.image)}" alt="${esc(post.imageAlt)}" width="1536" height="1024"><figcaption>AI-generated concept imagery, not a completed customer project.</figcaption></figure>
   <div class="article-reading"><div class="article-body">${post.body}</div>
   <section class="article-sources" aria-labelledby="sources-title"><h2 id="sources-title">Sources &amp; further reading</h2><p>Sources checked <time datetime="${post.checked}">${dateLabel(post.checked)}</time>. Manufacturer references explain their own products and systems; inclusion is not an endorsement.</p><ol>${sources}</ol></section>
-  <div class="article-next-step"><h2>Have a similar job?</h2><p>Describe it in the estimate form, including what you’ve noticed so far.</p><a class="button button-dark" href="${prefix}index.html#contact">Request an estimate ${arrow}</a></div>
+  <div class="article-next-step"><h2>Have a similar job?</h2><p>Email a description of the job, your city, and what you’ve noticed so far.</p><a class="button button-dark" href="${prefix}index.html#contact">Request an estimate ${arrow}</a></div>
   <nav class="article-back" aria-label="More articles"><a class="text-link" href="../">← Browse all home notes</a></nav>
   </div></article>`,
   });
