@@ -1,62 +1,103 @@
 # Arin Handyman and Contracting
 
-A responsive static website for home repairs and renovations across Halton and the Greater Toronto Area, with a sourced homeowner blog. The publishing root is `site/`.
+A responsive, front-end-only concept for home repairs and renovations across Halton and the Greater Toronto Area, with a researched homeowner blog.
 
-## Contact and public content
+## Local preview
 
-The approved business email is **arinhandyman@gmail.com**. The contact section displays the address and provides a `mailto:` link with a short project brief. Visitors send the message through their own email app or webmail. The website has no contact form, backend, enquiry storage, booking, payment integration, trackers, remote fonts, or third-party scripts. No public phone number is configured.
+Requires Node.js 18 or newer. No packages to install and no build step.
 
-The site uses cream, charcoal, and orange branding with readable text sizes. It has no AI-generated photography, dummy contact details, fabricated reviews, credentials, guarantees, or project claims. The social preview is a plain branded graphic. Add only approved business photos with permission; the site works without them.
+```sh
+node scripts/serve.mjs
+```
 
-## Local preview and checks
+Open <http://localhost:4173/arinwebsite/>. This uses the same project path as GitHub Pages. Stop with Ctrl+C. The entire static website is in `site/`.
 
-Requires Node.js 18 or newer. No packages to install.
+## Deployment
+
+`.github/workflows/deploy-pages.yml` deploys only `site/` on pushes to `main` or manual dispatch. Set repository **Settings → Pages → Source** to **GitHub Actions**.
+
+Live URL: <https://ariesyous.github.io/arinwebsite/>
+
+Official GitHub Pages actions use the `github-pages` environment and built-in `GITHUB_TOKEN`; no secrets or external hosting are required. Deployments are serialized without interrupting an active publication.
+
+The workflow also checks that generated blog pages, the business plan, and discovery files match their sources before publishing.
+
+When changing styles, increment the stylesheet's `v` query parameter in the HTML so returning visitors receive the updated CSS immediately.
+
+## Blog: Home notes
+
+Read the blog at <https://ariesyous.github.io/arinwebsite/blog/>. Four initial guides cover draughty doors, painting preparation, bathroom planning in Halton, and recurring grout or shower problems. Each has inline citations, original-source links, publication information, and a source-check date.
+
+Article source lives in `content/blog/posts.mjs`. To regenerate the static blog pages and homepage previews:
 
 ```sh
 node scripts/build-blog.mjs
 node scripts/build-discovery.mjs
-node scripts/build-business-plan.mjs
 node scripts/build-blog.mjs --check
 node scripts/build-discovery.mjs --check
-node scripts/build-business-plan.mjs --check
-node scripts/check-site.mjs
-node --check site/script.js
-git diff --check
-node scripts/serve.mjs
 ```
 
-Open <http://localhost:4173/arinwebsite/>. Stop with Ctrl+C. The project path matches GitHub Pages. Generated HTML is committed; no build runs in the visitor's browser.
+See [the complete publishing and research workflow](docs/blog-workflow.md) for the article format, editorial standards, validation, and deployment steps. Future agents should start with [AGENTS.md](AGENTS.md). Generated article HTML is committed; the deployed website still has no runtime dependencies.
 
-The production check verifies local links and anchors, sharing images, JSON-LD, the approved email links, and the absence of demo content, forms, and retired generated photos. Review desktop and phone layouts and browser errors too. Mail links open the visitor's email application; they do not submit or confirm delivery on the website.
+## Search and agent discovery
 
-## Deployment
+- [`site/sitemap.xml`](site/sitemap.xml) lists the canonical homepage, blog index, and every published article using absolute HTTPS URLs. Article `lastmod` values use their editorial `updated` dates; undated pages omit `lastmod` rather than inventing a date on every build.
+- [`site/llms.txt`](site/llms.txt) provides a concise business summary, service-area links, article descriptions, and the site's concept/demo limitations for agents. It follows the [llms.txt proposal](https://llmstxt.org/); it is supplementary guidance, not a promise of indexing or recommendations.
+- [`site/robots.txt`](site/robots.txt) contains permissive project-path rules and the sitemap URL. **GitHub Pages limitation:** the deployed `/arinwebsite/robots.txt` is not an effective robots policy. Crawlers only apply the file at `https://ariesyous.github.io/robots.txt`, which this repository's deployment does not manage. If you manage that origin-root site, merge the generated directives into its robots file without overwriting rules for other projects. See [Google's robots.txt placement guidance](https://developers.google.com/crawling/docs/robots-txt/create-robots-txt).
 
-`.github/workflows/deploy-pages.yml` checks the source and generated outputs, then deploys only `site/` on pushes to `main` or manual dispatch. Set repository **Settings → Pages → Source** to **GitHub Actions**.
+The homepage and generated blog pages link to the sitemap and llms.txt in their HTML heads. The homepage also has `WebSite` structured data; the blog retains its `Blog` and `BlogPosting` metadata. These describe the existing content without publishing placeholder phone numbers as real contact details. The business plan stays out of discovery files and retains `noindex,nofollow`; do not block its crawling, since crawlers need to read that metadata.
 
-Live URL: <https://ariesyous.github.io/arinwebsite/>.
+Run `node scripts/build-discovery.mjs` after generating the blog whenever articles, canonical URLs, or discovery copy change, then run `node scripts/build-discovery.mjs --check`. Edit summary wording in the generator when the business information changes; never hand-edit its three generated files. Commit the generator and outputs together. CI rejects missing or stale outputs.
 
-The workflow uses the `github-pages` environment and built-in `GITHUB_TOKEN`. No email credentials, Cloudflare configuration, or external form provider is required. Deployments are serialized without interrupting an active publication.
+After deployment, verify `/arinwebsite/llms.txt`, `/arinwebsite/sitemap.xml`, and their linked public pages. Submit `https://ariesyous.github.io/arinwebsite/sitemap.xml` in the verified property's Google Search Console and Bing Webmaster Tools; this repository does not submit it automatically. [Google's sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) explains submission and canonical URLs. Standard crawlable content remains the foundation: [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features) does not require special AI files and does not guarantee inclusion.
 
-Before launch, confirm the published services and service area with Arin and confirm that he can receive and reply from the approved inbox. Check the displayed address and mail link on a phone and desktop with an email app, and copy the address into webmail if no app is configured. Send any mailbox delivery test manually; the repository checks do not send email.
+## Business plan
 
-After publishing, monitor the Actions run and verify the homepage, contact section, all blog URLs, sharing image, sitemap, and llms.txt at the live URL. The former `/business-plan/` URL redirects to the homepage and stays out of the sitemap. The planning report is excluded from the Pages artifact.
+The business plan is written directly for Arin, the business owner, and lives at <https://ariesyous.github.io/arinwebsite/business-plan/>. Keep its advice addressed to him as “you” and treat outside setup/support help as optional and agreed, without assigning an ongoing role to a family member. It is intentionally absent from customer navigation and blog listings and carries `noindex,nofollow` metadata. It is still public, as is this repository; never add customer information, private credentials, or personal financial records.
 
-## Home notes
+Edit `docs/business-plan.md`, then regenerate the matching static HTML:
 
-Article source: `content/blog/posts.mjs`. Generated output: `site/blog/index.html`, each stable article URL, and the homepage between `BLOG:START` and `BLOG:END`. Never hand-edit generated content. Read [the authoring and research workflow](docs/blog-workflow.md) and [AGENTS.md](AGENTS.md) before changing articles.
+```sh
+node scripts/build-business-plan.mjs
+node scripts/build-business-plan.mjs --check
+node scripts/build-blog.mjs --check
+```
 
-Regenerate the blog after editing the homepage header, footer, icons, or asset versions. Increment CSS and JavaScript cache versions when changing those files. Cards and articles are text-only; the shared social graphic supplies the sharing image. Layout-only changes do not redate editorial or source-check records. Reopen relevant sources before changing `checked`.
+Commit the Markdown, renderer (if changed), and generated `site/business-plan/index.html` together. Do not format or hand-edit the generated HTML. The dependency-free renderer supports one `#` title, `##` sections, `###` subsections, paragraphs, flat `-` and numbered lists, pipe tables, bold text, inline code, and Markdown links. It escapes raw HTML and rejects unsafe link schemes, malformed tables, and broken heading anchors. Citations use `[1](#source-1)` with a corresponding `### Source 1` heading. Keep research dates deliberate; re-open relevant sources before updating them.
 
-## Discovery and sharing
+The page uses its own embedded responsive/print styles, without the homepage JavaScript or shared CSS. Its Markdown, renderer and referenced SVG diagrams are its inputs; regeneration does not modify the homepage or blog. Standalone diagram syntax is `![Descriptive summary](../site/assets/plan-name-v1.svg)`: the path works in GitHub's Markdown view and is rewritten for the published page. Keep diagrams black and white with readable labels and a numeric viewBox; use a new versioned filename for revisions. The three original vector drawings summarize the job flow, responsibilities and launch stages, without representing completed customer work. Check phone/desktop layout, sources, arithmetic, diagrams and print output when revising it. Proposed prices and scenarios must stay labelled as unapproved planning assumptions. The report does not activate the demo form or implement the proposed private operations system.
 
-`scripts/build-discovery.mjs` generates `site/sitemap.xml`, `site/llms.txt`, and `site/robots.txt`. Run it after the blog generator or any canonical/discovery-copy change. CI rejects stale generated files. The homepage and blog pages include canonical URLs, Open Graph, Twitter Cards, JSON-LD, and links to the discovery files. Canonical and sharing URLs are absolute HTTPS; navigation and assets use relative paths beneath `/arinwebsite/`.
+## Social link preview
 
-The project-path `robots.txt` does not set an origin-wide crawling policy: crawlers use `https://ariesyous.github.io/robots.txt`, which this deployment does not manage. If managing that origin root, merge the directives without overwriting other projects' rules. Submit the sitemap through verified Search Console or Bing Webmaster Tools if desired; this repository does not submit it or guarantee indexing.
+The homepage includes static Open Graph and large-image Twitter Card metadata with the business name, description, canonical URL, image dimensions, and descriptive alternative text. Sharing crawlers can read these directly from the HTML without running JavaScript.
 
-The sharing image is `site/assets/social-preview-v3.jpg`, a 1200 × 630 cream, charcoal, and orange graphic with the business name and service area. It contains no photography. Rebuild it on Windows using `scripts/build-social-preview.ps1` (System.Drawing). For future changes, use a new versioned filename and update all sharing tags and both HTML generators' social-image constants. Retired AI-generated photographs and social images were removed from the publishing root; their earlier history remains in Git.
+The branded image is `site/assets/social-preview-v2.jpg`, a 1200 × 630 JPEG, available at <https://ariesyous.github.io/arinwebsite/assets/social-preview-v2.jpg>. It matches the simplified website with cream, orange, and charcoal branding, plain “Home repairs & renovations” wording, the service area, and a clean photographic crop labelled as AI-generated concept imagery. Its generation prompt is recorded in `image-prompts.md`. The earlier `social-preview-v1.jpg` remains available for older cached links.
 
-## Business planning report
+Sharing metadata uses absolute HTTPS URLs. When replacing the preview image, use a new versioned filename and update both the Open Graph and Twitter image tags together to avoid reusing an old image URL.
 
-The planning source remains at `docs/business-plan.md`. `scripts/build-business-plan.mjs` renders it to `docs/business-plan/index.html` for local review, outside the publishing root. Keep source, renderer, and output together. Open that HTML file directly to view it. Its relative icon, diagram, and website links work locally.
+## Concept details
 
-The report records proposals and assumptions as of its stated research date; it is not a public service or price list. Keep advice addressed to Arin as “you,” and keep source-check dates deliberate. It is still available in this public repository; do not add private customer information, credentials, or personal financial records. The report does not implement an operations system.
+- `(416) 555-0148` is a clearly marked placeholder, not a call link.
+- The form validates locally and displays a demo confirmation. It sends no requests and stores no personal information. Inputs have no `name` attributes, preventing native form serialization if JavaScript is unavailable.
+- Photographs are AI-generated inspiration, not photographs of Arin or completed customer projects; the page labels them accordingly.
+- No fabricated testimonials, credentials, experience figures, or guarantees.
+- Relative asset paths support project-path hosting. No runtime dependencies, trackers, remote fonts, third-party scripts, or external APIs.
+
+## Image provenance
+
+The work photographs, including bathroom and kitchen refreshes, basement framing and drywall, and a door-maintenance article illustration, were generated specifically for this concept using the built-in OpenAI image generation tool and optimized locally to WebP. Full prompts are in `image-prompts.md`.
+
+The social preview graphic was created with the same built-in tool using the carpentry photograph and website branding as references, then resized and encoded as a JPEG.
+
+| Asset in `site/assets/`      | Subject                                                          |
+| ---------------------------- | ---------------------------------------------------------------- |
+| `carpentry.webp`             | Carpenter adjusting oak kitchen cabinetry; hero image.           |
+| `painting.webp`              | Painter refreshing a wall with floor protection.                 |
+| `tiling.webp`                | Gloved tiler positioning ivory bathroom tiles.                   |
+| `deck.webp`                  | Carpenter fastening cedar boards in a suburban backyard.         |
+| `bathroom-refresh.webp`      | Worker adjusting an oak vanity during a bathroom refresh.        |
+| `kitchen-refresh.webp`       | Worker fitting cabinet trim during a kitchen refresh.            |
+| `basement-drywall.webp`      | Worker taping drywall beside exposed basement partition framing. |
+| `door-weatherstripping.webp` | A gloved hand checking an exterior door seal; blog illustration. |
+
+Replace concept imagery and contact details with approved business material when turning this prototype into an operational enquiry website.

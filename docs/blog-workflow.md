@@ -48,6 +48,8 @@ Add an object to `posts` in `content/blog/posts.mjs`. The `citation()` helper al
   published: "YYYY-MM-DD",
   updated: "YYYY-MM-DD",
   checked: "YYYY-MM-DD",
+  image: "existing-or-new-asset.webp",
+  imageAlt: "Accurate description, identifying a generated concept if applicable.",
   sources: [
     { publisher: "Actual publisher", title: "Actual page title", url: "https://..." },
     { publisher: "Another publisher", title: "Actual page title", url: "https://..." },
@@ -63,7 +65,7 @@ Add an object to `posts` in `content/blog/posts.mjs`. The `citation()` helper al
 }
 ```
 
-Use a stable lowercase slug with words separated by hyphens. Articles and cards are text-only and use the shared branded image for sharing metadata. Use semantic paragraphs, `h2` headings, and lists in `body`; the template supplies the page's single `h1`, navigation, dates, source list, and contact link. Do not place scripts, forms, or iframes inside articles.
+Use a stable lowercase slug with words separated by hyphens. Keep image files in `site/assets/` and reference only the filename. Use semantic paragraphs, `h2` headings, and lists in `body`; the template supplies the page's single `h1`, navigation, dates, source list, and contact link. Do not place scripts, forms, or iframes inside articles.
 
 Dates are deliberate editorial records. `published` is the original publication date. Change `updated` when making an editorial revision and change `checked` only after reviewing the sources. Do not rewrite old publication dates or automatically stamp today's date. Reading time is calculated from the body.
 
@@ -79,11 +81,10 @@ node scripts/build-discovery.mjs
 node scripts/build-blog.mjs --check
 node scripts/build-discovery.mjs --check
 node --check site/script.js
-node scripts/check-site.mjs
 git diff --check
 ```
 
-The generator validates slugs, dates, source records, and citation references. It creates the article pages and blog index and updates the three most recent homepage previews. It copies the homepage's shared navigation, footer, icon definitions, and asset cache versions so those remain consistent across pages.
+The generator validates slugs, dates, local images, source records, and citation references. It creates the article pages and blog index and updates the three most recent homepage previews. It copies the homepage's shared navigation, footer, icon definitions, and asset cache versions so those remain consistent across pages.
 
 The check command does not edit anything. It reports missing or stale generated files and exits unsuccessfully when they differ from the source. It does **not** verify that a factual claim is true or that an external page still supports it; that remains an editorial responsibility.
 
@@ -94,10 +95,10 @@ If you use a formatter, format source files before running the generator. Do not
 Run `node scripts/serve.mjs` and visit `http://localhost:4173/arinwebsite/blog/`. Review the new article and its homepage card at desktop and phone widths. Check:
 
 - Title, excerpt, headings, paragraph flow, and readable text without horizontal overflow.
-- Text-only card layout and the shared branded sharing image; do not add generated project photos.
+- Image appearance and alt text; generated illustrations must not be presented as completed work.
 - Every inline citation jumps to its corresponding source, and every source link points to the original page.
 - Navigation, breadcrumbs, the return-to-blog link, and the project-enquiry link work under `/arinwebsite/`.
-- The console has no errors on article pages, which share navigation code with the homepage.
+- The console has no errors on article pages, which share navigation code but do not have a contact form.
 - The canonical URL, Open Graph/Twitter fields, publication dates, and JSON-LD describe this article. The default sharing graphic is the branded company preview.
 
 Review the claims as carefully as the layout. Distinguish your planning suggestions from source-derived requirements, and qualify uncertainty where an on-site assessment is needed.

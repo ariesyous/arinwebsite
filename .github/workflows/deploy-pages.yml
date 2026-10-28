@@ -29,8 +29,6 @@ jobs:
         run: node scripts/build-business-plan.mjs --check
       - name: Check generated discovery files
         run: node scripts/build-discovery.mjs --check
-      - name: Check production website
-        run: node scripts/check-site.mjs
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static website

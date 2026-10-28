@@ -13,6 +13,9 @@ export const posts = [
     published: "2026-10-22",
     updated: "2026-10-22",
     checked: "2026-10-22",
+    image: "door-weatherstripping.webp",
+    imageAlt:
+      "AI-generated concept of a gloved hand checking the weatherstripping on an open exterior door.",
     sources: [
       {
         publisher: "Natural Resources Canada",
@@ -51,6 +54,9 @@ export const posts = [
     published: "2026-10-22",
     updated: "2026-10-22",
     checked: "2026-10-22",
+    image: "painting.webp",
+    imageAlt:
+      "AI-generated concept of a painter refreshing a wall in a naturally lit room with protected floors.",
     sources: [
       {
         publisher: "Benjamin Moore",
@@ -94,6 +100,9 @@ export const posts = [
     published: "2026-10-22",
     updated: "2026-10-22",
     checked: "2026-10-22",
+    image: "tiling.webp",
+    imageAlt:
+      "AI-generated concept of a tiler working beside a natural oak bathroom vanity.",
     sources: [
       {
         publisher: "Town of Oakville",
@@ -141,6 +150,9 @@ export const posts = [
     published: "2026-10-22",
     updated: "2026-10-22",
     checked: "2026-10-22",
+    image: "tiling.webp",
+    imageAlt:
+      "AI-generated concept of careful tile installation, used as an illustration rather than a completed repair.",
     sources: [
       {
         publisher: "Schluter-Systems",
