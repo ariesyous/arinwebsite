@@ -61,3 +61,11 @@ Use case: photorealistic-natural. Asset type: website project inspiration photog
 ## deck
 
 Use case: photorealistic-natural. Asset type: website project inspiration photograph. Candid editorial photograph of an anonymous professional carpenter wearing a rust orange work shirt, dark work trousers, gloves and safety glasses, kneeling securely on a low backyard cedar deck and fastening one of the boards with a cordless drill. A tidy Ontario suburban backyard with green garden plants and a brick house, warm late afternoon sunlight, rich natural cedar grain. Medium-wide landscape 3:2 composition, craftsmanship and hands-on work clearly visible, plausible anatomy, tools and safe posture, no dangerous elevated work. Cohesive warm natural photography for Rene Handyman and Contracting. No text, logos, watermark, recognizable real person, collage or before-and-after layout.
+
+## Social preview label removal — October 27, 2026
+
+`site/assets/social-preview-v4.jpg` was edited with the built-in imagegen tool using `social-preview-v2.jpg` as the edit target, then resized to 1200 × 630 and encoded as JPEG with FFmpeg. The eight WebP photographs used throughout the website were retained without edits.
+
+Final edit prompt:
+
+> Use case: text-localization. EDIT TARGET: the supplied existing 1200 x 630 social sharing preview for Arin Handyman and Contracting. Make exactly one localized change: remove the tiny grey text at the bottom left that reads 'AI-generated concept imagery', filling that small text area with the identical surrounding cream background. Keep ALL other content and layout unchanged: the ARIN orange house logo, company name 'Handyman and Contracting', large headline 'Home repairs & renovations', Halton & the Greater Toronto Area text, existing cream background, and the entire carpentry photograph on the right including the same man, pose, face, hands, tools, and cabinets. Preserve original dimensions and composition. No new text, labels, badges, objects, or redesign. This is a tiny text removal, not a new image.

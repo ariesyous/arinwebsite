@@ -378,24 +378,6 @@ p {
   border-radius: 3px;
   position: absolute;
 }
-.image-label {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  color: #fff;
-  background: #20281fd9;
-  padding: 5px 9px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  line-height: 1.5;
-  z-index: 1;
-}
-.hero .image-label {
-  top: auto;
-  bottom: 15px;
-  left: 15px;
-  font-size: 11px;
-}
 .section-heading {
   display: flex;
   justify-content: space-between;
@@ -704,15 +686,12 @@ p {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
 }
 .contact-detail-label {
   font-size: 12px;
   letter-spacing: 0.12em;
   color: #b5bdac;
-}
-.phone-number {
-  font-size: 26px;
-  letter-spacing: -0.025em;
 }
 .contact-card {
   min-width: 0;
@@ -721,127 +700,40 @@ p {
   border-radius: 3px;
   padding: 32px;
 }
-.form-heading {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
+.contact-email {
+  font-size: clamp(20px, 2vw, 26px);
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
-.form-heading h3 {
+.contact-email:hover {
+  color: #f5b18c;
+}
+.contact-card h3 {
   font-size: 26px;
-  max-width: 245px;
   line-height: 1.2;
 }
-.demo-label {
-  display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-  background: #e6e8dc;
-  padding: 5px 7px;
-  color: #475542;
-  font-weight: 650;
-  margin-top: 4px;
-}
-.form-intro {
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 12px 0 25px;
-}
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 17px 15px;
-}
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  min-width: 0;
-}
-.field label {
-  font-size: 16px;
-  font-weight: 600;
-}
-.field label > span:not(.optional) {
-  color: var(--orange-dark);
-}
-.optional {
-  font-size: 13px;
-  color: var(--muted);
-  font-weight: 400;
-}
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  min-width: 0;
-  border: 1px solid #d6d9cc;
-  background: #fffdf8;
-  color: var(--ink);
-  border-radius: 2px;
-  padding: 11px 10px;
-  font-size: 16px;
-  line-height: 1.5;
-  min-height: 43px;
-}
-.field input::placeholder,
-.field textarea::placeholder {
-  color: #6e7367;
-  opacity: 1;
-}
-.field select {
-  padding-right: 24px;
-}
-.field textarea {
-  resize: vertical;
-  min-height: 94px;
-}
-.field:focus-within label {
-  color: var(--orange-dark);
-}
-.full-width {
-  grid-column: 1/-1;
-}
-.form-submit {
-  width: 100%;
-  margin-top: 21px;
-  font-size: 16px;
-  min-height: 48px;
-  padding: 14px 16px;
-}
-.form-footnote {
-  font-size: 13px;
-  margin-top: 11px;
-  line-height: 1.6;
-}
-.form-result {
+.contact-intro {
   margin-top: 18px;
-  display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  background: #e2eadc;
-  padding: 15px;
-  border: 1px solid #b5c7ac;
-  border-radius: 2px;
+  font-size: 17px;
+  line-height: 1.8;
 }
-.form-result[hidden] {
-  display: none;
+.contact-checklist {
+  padding-left: 23px;
+  margin-block: 24px;
 }
-.form-result .icon {
-  width: 19px;
-  height: 19px;
-  color: #315634;
+.contact-checklist li {
+  margin-block: 13px;
+  padding-left: 4px;
 }
-.form-result strong {
-  font-size: 16px;
-  line-height: 1.5;
-  display: block;
+.contact-button {
+  width: 100%;
 }
-.form-result p {
+.contact-help {
   font-size: 14px;
-  line-height: 1.6;
-  margin-top: 5px;
+  line-height: 1.7;
+  margin-top: 16px;
 }
 .site-footer {
   background: var(--cream);
@@ -969,13 +861,6 @@ p {
   .contact-card {
     padding: 27px;
   }
-  .form-heading h3 {
-    font-size: 24px;
-  }
-  .demo-label {
-    font-size: 10px;
-    padding: 4px 5px;
-  }
   .contact-copy h2 {
     font-size: 72px;
   }
@@ -1099,12 +984,6 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 34px 20px;
   }
-  .project-image .image-label {
-    font-size: 10px;
-    left: 10px;
-    top: 10px;
-    padding: 4px 6px;
-  }
   .project h3 {
     font-size: 19px;
   }
@@ -1152,30 +1031,12 @@ p {
   .contact-card {
     padding: 23px;
   }
-  .form-heading {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .form-heading h3 {
-    font-size: 23px;
-  }
-  .demo-label {
-    font-size: 11px;
-  }
-  .field input,
-  .field select,
-  .field textarea {
-    font-size: 16px;
-  }
   .contact-detail {
     font-size: 16px;
     gap: 12px;
   }
   .contact-detail-label {
     font-size: 11px;
-  }
-  .phone-number {
-    font-size: 23px;
   }
   .footer-bottom {
     font-size: 12px;
@@ -1318,11 +1179,6 @@ p {
   .hero-visual > img {
     object-position: 60% center;
   }
-  .hero .image-label {
-    font-size: 10px;
-    bottom: 11px;
-    left: 11px;
-  }
   .section {
     padding-block: 60px;
   }
@@ -1425,12 +1281,6 @@ p {
   .project .project-image {
     aspect-ratio: 1.2;
   }
-  .project-image .image-label {
-    font-size: 11px;
-    top: 13px;
-    left: 13px;
-    padding: 5px 8px;
-  }
   .project h3 {
     font-size: 21px;
   }
@@ -1506,68 +1356,8 @@ p {
   .contact-detail-label {
     font-size: 12px;
   }
-  .phone-number {
-    font-size: 25px;
-  }
   .contact-card {
     padding: 26px 22px;
-  }
-  .form-heading {
-    gap: 10px;
-  }
-  .form-heading h3 {
-    font-size: 25px;
-    max-width: 210px;
-  }
-  .demo-label {
-    font-size: 11px;
-  }
-  .form-intro {
-    font-size: 16px;
-    line-height: 1.7;
-    margin-top: 11px;
-    margin-bottom: 24px;
-  }
-  .form-grid {
-    gap: 19px 13px;
-  }
-  .field label {
-    font-size: 16px;
-  }
-  .optional {
-    font-size: 13px;
-  }
-  .field input,
-  .field select,
-  .field textarea {
-    font-size: 18px;
-    padding: 11px 10px;
-    min-height: 46px;
-  }
-  .field input::placeholder,
-  .field textarea::placeholder {
-    font-size: 16px;
-  }
-  .field select {
-    font-size: 17px;
-  }
-  .field textarea {
-    font-size: 18px;
-    min-height: 110px;
-  }
-  .form-submit {
-    font-size: 16px;
-    min-height: 51px;
-  }
-  .form-footnote {
-    font-size: 13px;
-    line-height: 1.7;
-  }
-  .form-result strong {
-    font-size: 16px;
-  }
-  .form-result p {
-    font-size: 14px;
   }
   .footer-main {
     flex-wrap: wrap;
@@ -1618,12 +1408,6 @@ p {
   .contact-card {
     padding-inline: 17px;
   }
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-  .full-width {
-    grid-column: auto;
-  }
   .city-list li {
     font-size: 18px;
   }
@@ -1637,12 +1421,8 @@ p {
   }
 }
 @media (max-width: 600px) {
-  .services-grid,
-  .form-grid {
+.services-grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .full-width {
-    grid-column: 1 / -1;
   }
 }
 @media (prefers-reduced-motion: reduce) {

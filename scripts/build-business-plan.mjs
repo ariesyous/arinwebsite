@@ -9,9 +9,9 @@ const outputPath = resolve(root, "site/business-plan/index.html");
 const canonical = "https://ariesyous.github.io/arinwebsite/business-plan/";
 const brand = "Arin Handyman and Contracting";
 const socialImage =
-  "https://ariesyous.github.io/arinwebsite/assets/social-preview-v2.jpg";
+  "https://ariesyous.github.io/arinwebsite/assets/social-preview-v4.jpg";
 const socialAlt =
-  "Arin Handyman and Contracting — Home repairs and renovations across Halton and the Greater Toronto Area, with AI-generated concept carpentry imagery.";
+  "Arin Handyman and Contracting — Home repairs and renovations across Halton and the Greater Toronto Area.";
 
 const escape = (value) =>
   String(value)

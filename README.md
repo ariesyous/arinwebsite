@@ -1,6 +1,6 @@
 # Arin Handyman and Contracting
 
-A responsive, front-end-only concept for home repairs and renovations across Halton and the Greater Toronto Area, with a researched homeowner blog.
+A responsive, front-end-only website for home repairs and renovations across Halton and the Greater Toronto Area, with a researched homeowner blog.
 
 ## Local preview
 
@@ -42,10 +42,10 @@ See [the complete publishing and research workflow](docs/blog-workflow.md) for t
 ## Search and agent discovery
 
 - [`site/sitemap.xml`](site/sitemap.xml) lists the canonical homepage, blog index, and every published article using absolute HTTPS URLs. Article `lastmod` values use their editorial `updated` dates; undated pages omit `lastmod` rather than inventing a date on every build.
-- [`site/llms.txt`](site/llms.txt) provides a concise business summary, service-area links, article descriptions, and the site's concept/demo limitations for agents. It follows the [llms.txt proposal](https://llmstxt.org/); it is supplementary guidance, not a promise of indexing or recommendations.
+- [`site/llms.txt`](site/llms.txt) provides a concise business summary, service-area links, article descriptions, and the site's email enquiry details for agents. It follows the [llms.txt proposal](https://llmstxt.org/); it is supplementary guidance, not a promise of indexing or recommendations.
 - [`site/robots.txt`](site/robots.txt) contains permissive project-path rules and the sitemap URL. **GitHub Pages limitation:** the deployed `/arinwebsite/robots.txt` is not an effective robots policy. Crawlers only apply the file at `https://ariesyous.github.io/robots.txt`, which this repository's deployment does not manage. If you manage that origin-root site, merge the generated directives into its robots file without overwriting rules for other projects. See [Google's robots.txt placement guidance](https://developers.google.com/crawling/docs/robots-txt/create-robots-txt).
 
-The homepage and generated blog pages link to the sitemap and llms.txt in their HTML heads. The homepage also has `WebSite` structured data; the blog retains its `Blog` and `BlogPosting` metadata. These describe the existing content without publishing placeholder phone numbers as real contact details. The business plan stays out of discovery files and retains `noindex,nofollow`; do not block its crawling, since crawlers need to read that metadata.
+The homepage and generated blog pages link to the sitemap and llms.txt in their HTML heads. The homepage also has `WebSite` structured data; the blog retains its `Blog` and `BlogPosting` metadata. These describe the existing content and approved email contact without publishing a phone number. The business plan stays out of discovery files and retains `noindex,nofollow`; do not block its crawling, since crawlers need to read that metadata.
 
 Run `node scripts/build-discovery.mjs` after generating the blog whenever articles, canonical URLs, or discovery copy change, then run `node scripts/build-discovery.mjs --check`. Edit summary wording in the generator when the business information changes; never hand-edit its three generated files. Commit the generator and outputs together. CI rejects missing or stale outputs.
 
@@ -65,23 +65,25 @@ node scripts/build-blog.mjs --check
 
 Commit the Markdown, renderer (if changed), and generated `site/business-plan/index.html` together. Do not format or hand-edit the generated HTML. The dependency-free renderer supports one `#` title, `##` sections, `###` subsections, paragraphs, flat `-` and numbered lists, pipe tables, bold text, inline code, and Markdown links. It escapes raw HTML and rejects unsafe link schemes, malformed tables, and broken heading anchors. Citations use `[1](#source-1)` with a corresponding `### Source 1` heading. Keep research dates deliberate; re-open relevant sources before updating them.
 
-The page uses its own embedded responsive/print styles, without the homepage JavaScript or shared CSS. Its Markdown, renderer and referenced SVG diagrams are its inputs; regeneration does not modify the homepage or blog. Standalone diagram syntax is `![Descriptive summary](../site/assets/plan-name-v1.svg)`: the path works in GitHub's Markdown view and is rewritten for the published page. Keep diagrams black and white with readable labels and a numeric viewBox; use a new versioned filename for revisions. The three original vector drawings summarize the job flow, responsibilities and launch stages, without representing completed customer work. Check phone/desktop layout, sources, arithmetic, diagrams and print output when revising it. Proposed prices and scenarios must stay labelled as unapproved planning assumptions. The report does not activate the demo form or implement the proposed private operations system.
+The page uses its own embedded responsive/print styles, without the homepage JavaScript or shared CSS. Its Markdown, renderer and referenced SVG diagrams are its inputs; regeneration does not modify the homepage or blog. Standalone diagram syntax is `![Descriptive summary](../site/assets/plan-name-v1.svg)`: the path works in GitHub's Markdown view and is rewritten for the published page. Keep diagrams black and white with readable labels and a numeric viewBox; use a new versioned filename for revisions. The three original vector drawings summarize the job flow, responsibilities and launch stages, without representing completed customer work. Check phone/desktop layout, sources, arithmetic, diagrams and print output when revising it. Proposed prices and scenarios must stay labelled as unapproved planning assumptions. The report does not implement the proposed private operations system.
 
 ## Social link preview
 
 The homepage includes static Open Graph and large-image Twitter Card metadata with the business name, description, canonical URL, image dimensions, and descriptive alternative text. Sharing crawlers can read these directly from the HTML without running JavaScript.
 
-The branded image is `site/assets/social-preview-v2.jpg`, a 1200 × 630 JPEG, available at <https://ariesyous.github.io/arinwebsite/assets/social-preview-v2.jpg>. It matches the simplified website with cream, orange, and charcoal branding, plain “Home repairs & renovations” wording, the service area, and a clean photographic crop labelled as AI-generated concept imagery. Its generation prompt is recorded in `image-prompts.md`. The earlier `social-preview-v1.jpg` remains available for older cached links.
+The branded image is `site/assets/social-preview-v4.jpg`, a 1200 × 630 JPEG at <https://ariesyous.github.io/arinwebsite/assets/social-preview-v4.jpg>. It retains the photographic design and cream, orange, and charcoal branding, with the small concept label removed. Earlier versioned previews remain available for cached links. Its editing prompt and provenance are recorded in `image-prompts.md`.
 
 Sharing metadata uses absolute HTTPS URLs. When replacing the preview image, use a new versioned filename and update both the Open Graph and Twitter image tags together to avoid reusing an old image URL.
 
-## Concept details
+## Contact and launch details
 
-- `(416) 555-0148` is a clearly marked placeholder, not a call link.
-- The form validates locally and displays a demo confirmation. It sends no requests and stores no personal information. Inputs have no `name` attributes, preventing native form serialization if JavaScript is unavailable.
-- Photographs are AI-generated inspiration, not photographs of Arin or completed customer projects; the page labels them accordingly.
+- The approved enquiry address is **arinhandyman@gmail.com**. The website displays it and provides a mail link with a short project brief; the visitor sends the message in their own email app or webmail.
+- There is no contact form, public phone number, enquiry storage, booking, payment integration, or backend. No email service credentials are needed. Mailbox delivery is not tested by the repository checks.
+- The hero, project ideas, blog photographs, and existing layout are retained. The owner requested removing the visible AI/concept badges and captions. The gallery remains project ideas rather than a portfolio of completed customer work. Image provenance is retained below and in `image-prompts.md`.
 - No fabricated testimonials, credentials, experience figures, or guarantees.
 - Relative asset paths support project-path hosting. No runtime dependencies, trackers, remote fonts, third-party scripts, or external APIs.
+- Run `node scripts/check-site.mjs` before publishing. CI verifies local links, anchors, shared image dimensions, approved email links, retained photographs, and the absence of demo forms and customer-facing concept labels.
+- Confirm the services, service area, and inbox access with Arin before the business launch. Test the mail link in a configured email app, or copy the address into webmail.
 
 ## Image provenance
 
@@ -100,4 +102,4 @@ The social preview graphic was created with the same built-in tool using the car
 | `basement-drywall.webp`      | Worker taping drywall beside exposed basement partition framing. |
 | `door-weatherstripping.webp` | A gloved hand checking an exterior door seal; blog illustration. |
 
-Replace concept imagery and contact details with approved business material when turning this prototype into an operational enquiry website.
+Keep the approved email address until a purchased domain and its forwarding rule are configured and tested. A domain address discussed as an example must not be published as working contact information.

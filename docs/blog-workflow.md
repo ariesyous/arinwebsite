@@ -49,7 +49,7 @@ Add an object to `posts` in `content/blog/posts.mjs`. The `citation()` helper al
   updated: "YYYY-MM-DD",
   checked: "YYYY-MM-DD",
   image: "existing-or-new-asset.webp",
-  imageAlt: "Accurate description, identifying a generated concept if applicable.",
+  imageAlt: "Accurate description of what is visible in the image.",
   sources: [
     { publisher: "Actual publisher", title: "Actual page title", url: "https://..." },
     { publisher: "Another publisher", title: "Actual page title", url: "https://..." },
@@ -81,6 +81,7 @@ node scripts/build-discovery.mjs
 node scripts/build-blog.mjs --check
 node scripts/build-discovery.mjs --check
 node --check site/script.js
+node scripts/check-site.mjs
 git diff --check
 ```
 
@@ -95,7 +96,7 @@ If you use a formatter, format source files before running the generator. Do not
 Run `node scripts/serve.mjs` and visit `http://localhost:4173/arinwebsite/blog/`. Review the new article and its homepage card at desktop and phone widths. Check:
 
 - Title, excerpt, headings, paragraph flow, and readable text without horizontal overflow.
-- Image appearance and alt text; generated illustrations must not be presented as completed work.
+- Image appearance and descriptive alt text. Retain the existing illustrations without overlay badges or generic concept captions; do not present them as completed customer work.
 - Every inline citation jumps to its corresponding source, and every source link points to the original page.
 - Navigation, breadcrumbs, the return-to-blog link, and the project-enquiry link work under `/arinwebsite/`.
 - The console has no errors on article pages, which share navigation code but do not have a contact form.
