@@ -10,20 +10,20 @@ Home notes articles provide general planning guidance, with numbered source cita
 
 ## Business information
 
-- [Homepage](https://ariesyous.github.io/arinwebsite/): Business overview and project enquiries.
-- [Services](https://ariesyous.github.io/arinwebsite/#services): Descriptions of the service categories shown on the site.
-- [Service area](https://ariesyous.github.io/arinwebsite/#areas): Halton and Greater Toronto Area communities listed on the site.
-- [About Arin](https://ariesyous.github.io/arinwebsite/#about): The site's business introduction.
-- [Contact](https://ariesyous.github.io/arinwebsite/#contact): Business phone number, email address, and details to include in an enquiry.
+- [Homepage](https://arinhandyman.com/): Business overview and project enquiries.
+- [Services](https://arinhandyman.com/#services): Descriptions of the service categories shown on the site.
+- [Service area](https://arinhandyman.com/#areas): Halton and Greater Toronto Area communities listed on the site.
+- [About Arin](https://arinhandyman.com/#about): The site's business introduction.
+- [Contact](https://arinhandyman.com/#contact): Business phone number, email address, and details to include in an enquiry.
 
 ## Homeowner guides
 
-- [Home notes](https://ariesyous.github.io/arinwebsite/blog/): Index of all researched guides.
-- [A draughty door doesn’t always need replacing](https://ariesyous.github.io/arinwebsite/blog/draughty-door-repair-or-replace/): Find out where the air is getting in, then separate a worn seal from a door or frame that needs more attention.
-- [The prep work that makes a paint refresh last](https://ariesyous.github.io/arinwebsite/blog/paint-preparation-that-lasts/): Cleaning, repairs, and the right primer belong in the plan before anyone opens a tin of the new colour.
-- [A bathroom refresh: decide what stays before pricing what changes](https://ariesyous.github.io/arinwebsite/blog/bathroom-refresh-planning-halton/): A practical scope checklist for Halton homeowners, including where local permits and electrical requirements enter the conversation.
-- [Cracked grout: when a shower needs a closer look](https://ariesyous.github.io/arinwebsite/blog/grout-repair-or-shower-leak/): Separate a tired-looking joint from a water-management problem before choosing a cosmetic repair.
+- [Home notes](https://arinhandyman.com/blog/): Index of all researched guides.
+- [A draughty door doesn’t always need replacing](https://arinhandyman.com/blog/draughty-door-repair-or-replace/): Find out where the air is getting in, then separate a worn seal from a door or frame that needs more attention.
+- [The prep work that makes a paint refresh last](https://arinhandyman.com/blog/paint-preparation-that-lasts/): Cleaning, repairs, and the right primer belong in the plan before anyone opens a tin of the new colour.
+- [A bathroom refresh: decide what stays before pricing what changes](https://arinhandyman.com/blog/bathroom-refresh-planning-halton/): A practical scope checklist for Halton homeowners, including where local permits and electrical requirements enter the conversation.
+- [Cracked grout: when a shower needs a closer look](https://arinhandyman.com/blog/grout-repair-or-shower-leak/): Separate a tired-looking joint from a water-management problem before choosing a cosmetic repair.
 
 ## Optional
 
-- [XML sitemap](https://ariesyous.github.io/arinwebsite/sitemap.xml): Canonical public pages for search discovery.
+- [XML sitemap](https://arinhandyman.com/sitemap.xml): Canonical public pages for search discovery.

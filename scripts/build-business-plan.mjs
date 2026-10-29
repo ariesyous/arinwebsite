@@ -6,10 +6,10 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = resolve(root, "docs/business-plan.md");
 const outputPath = resolve(root, "site/business-plan/index.html");
-const canonical = "https://ariesyous.github.io/arinwebsite/business-plan/";
+const canonical = "https://arinhandyman.com/business-plan/";
 const brand = "Arin Handyman and Contracting";
 const socialImage =
-  "https://ariesyous.github.io/arinwebsite/assets/social-preview-v4.jpg";
+  "https://arinhandyman.com/assets/social-preview-v4.jpg";
 const socialAlt =
   "Arin Handyman and Contracting — Home repairs and renovations across Halton and the Greater Toronto Area.";
 

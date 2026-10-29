@@ -6,7 +6,7 @@ import { posts } from "../content/blog/posts.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const site = resolve(root, "site");
-const base = "https://ariesyous.github.io/arinwebsite/";
+const base = "https://arinhandyman.com/";
 const brand = "Arin Handyman and Contracting";
 const socialImage = `${base}assets/social-preview-v4.jpg`;
 const socialImageAlt =

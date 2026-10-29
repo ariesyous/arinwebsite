@@ -10,13 +10,13 @@ Requires Node.js 18 or newer. No packages to install and no build step.
 node scripts/serve.mjs
 ```
 
-Open <http://localhost:4173/arinwebsite/>. This uses the same project path as GitHub Pages. Stop with Ctrl+C. The entire static website is in `site/`.
+Open <http://localhost:4173/>. This matches the custom-domain root. The previous `/arinwebsite/` preview path also works. Stop with Ctrl+C. The entire static website is in `site/`.
 
 ## Deployment
 
 `.github/workflows/deploy-pages.yml` deploys only `site/` on pushes to `main` or manual dispatch. Set repository **Settings → Pages → Source** to **GitHub Actions**.
 
-Live URL: <https://ariesyous.github.io/arinwebsite/>
+Live URL: <https://arinhandyman.com/>
 
 Official GitHub Pages actions use the `github-pages` environment and built-in `GITHUB_TOKEN`; no secrets or external hosting are required. Deployments are serialized without interrupting an active publication.
 
@@ -26,7 +26,7 @@ When changing styles, increment the stylesheet's `v` query parameter in the HTML
 
 ## Blog: Home notes
 
-Read the blog at <https://ariesyous.github.io/arinwebsite/blog/>. Four initial guides cover draughty doors, painting preparation, bathroom planning in Halton, and recurring grout or shower problems. Each has inline citations, original-source links, publication information, and a source-check date.
+Read the blog at <https://arinhandyman.com/blog/>. Four initial guides cover draughty doors, painting preparation, bathroom planning in Halton, and recurring grout or shower problems. Each has inline citations, original-source links, publication information, and a source-check date.
 
 Article source lives in `content/blog/posts.mjs`. To regenerate the static blog pages and homepage previews:
 
@@ -43,17 +43,17 @@ See [the complete publishing and research workflow](docs/blog-workflow.md) for t
 
 - [`site/sitemap.xml`](site/sitemap.xml) lists the canonical homepage, blog index, and every published article using absolute HTTPS URLs. Article `lastmod` values use their editorial `updated` dates; undated pages omit `lastmod` rather than inventing a date on every build.
 - [`site/llms.txt`](site/llms.txt) provides a concise business summary, service-area links, article descriptions, and the site's email enquiry details for agents. It follows the [llms.txt proposal](https://llmstxt.org/); it is supplementary guidance, not a promise of indexing or recommendations.
-- [`site/robots.txt`](site/robots.txt) contains permissive project-path rules and the sitemap URL. **GitHub Pages limitation:** the deployed `/arinwebsite/robots.txt` is not an effective robots policy. Crawlers only apply the file at `https://ariesyous.github.io/robots.txt`, which this repository's deployment does not manage. If you manage that origin-root site, merge the generated directives into its robots file without overwriting rules for other projects. See [Google's robots.txt placement guidance](https://developers.google.com/crawling/docs/robots-txt/create-robots-txt).
+- [`site/robots.txt`](site/robots.txt) is served at the custom-domain root and allows crawling, with the canonical sitemap URL. Noindex pages remain crawlable so crawlers can read that metadata.
 
 The homepage and generated blog pages link to the sitemap and llms.txt in their HTML heads. The homepage also has `WebSite` structured data; the blog retains its `Blog` and `BlogPosting` metadata. These describe the existing content and approved phone and email contact details. The business plan stays out of discovery files and retains `noindex,nofollow`; do not block its crawling, since crawlers need to read that metadata.
 
 Run `node scripts/build-discovery.mjs` after generating the blog whenever articles, canonical URLs, or discovery copy change, then run `node scripts/build-discovery.mjs --check`. Edit summary wording in the generator when the business information changes; never hand-edit its three generated files. Commit the generator and outputs together. CI rejects missing or stale outputs.
 
-After deployment, verify `/arinwebsite/llms.txt`, `/arinwebsite/sitemap.xml`, and their linked public pages. Submit `https://ariesyous.github.io/arinwebsite/sitemap.xml` in the verified property's Google Search Console and Bing Webmaster Tools; this repository does not submit it automatically. [Google's sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) explains submission and canonical URLs. Standard crawlable content remains the foundation: [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features) does not require special AI files and does not guarantee inclusion.
+After deployment, verify `/llms.txt`, `/sitemap.xml`, and their linked public pages. Submit `https://arinhandyman.com/sitemap.xml` in the verified property's Google Search Console and Bing Webmaster Tools; this repository does not submit it automatically. [Google's sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) explains submission and canonical URLs. Standard crawlable content remains the foundation: [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features) does not require special AI files and does not guarantee inclusion.
 
 ## Business plan
 
-The business plan is written directly for Arin, the business owner, and lives at <https://ariesyous.github.io/arinwebsite/business-plan/>. Keep its advice addressed to him as “you” and treat outside setup/support help as optional and agreed, without assigning an ongoing role to a family member. It is intentionally absent from customer navigation and blog listings and carries `noindex,nofollow` metadata. It is still public, as is this repository; never add customer information, private credentials, or personal financial records.
+The business plan is written directly for Arin, the business owner, and lives at <https://arinhandyman.com/business-plan/>. Keep its advice addressed to him as “you” and treat outside setup/support help as optional and agreed, without assigning an ongoing role to a family member. It is intentionally absent from customer navigation and blog listings and carries `noindex,nofollow` metadata. It is still public, as is this repository; never add customer information, private credentials, or personal financial records.
 
 Edit `docs/business-plan.md`, then regenerate the matching static HTML:
 
@@ -71,7 +71,7 @@ The page uses its own embedded responsive/print styles, without the homepage Jav
 
 The homepage includes static Open Graph and large-image Twitter Card metadata with the business name, description, canonical URL, image dimensions, and descriptive alternative text. Sharing crawlers can read these directly from the HTML without running JavaScript.
 
-The branded image is `site/assets/social-preview-v4.jpg`, a 1200 × 630 JPEG at <https://ariesyous.github.io/arinwebsite/assets/social-preview-v4.jpg>. It retains the photographic design and cream, orange, and charcoal branding, with the small concept label removed. Earlier versioned previews remain available for cached links. Its editing prompt and provenance are recorded in `image-prompts.md`.
+The branded image is `site/assets/social-preview-v4.jpg`, a 1200 × 630 JPEG at <https://arinhandyman.com/assets/social-preview-v4.jpg>. It retains the photographic design and cream, orange, and charcoal branding, with the small concept label removed. Earlier versioned previews remain available for cached links. Its editing prompt and provenance are recorded in `image-prompts.md`.
 
 Sharing metadata uses absolute HTTPS URLs. When replacing the preview image, use a new versioned filename and update both the Open Graph and Twitter image tags together to avoid reusing an old image URL.
 
@@ -102,4 +102,4 @@ The social preview graphic was created with the same built-in tool using the car
 | `basement-drywall.webp`      | Worker taping drywall beside exposed basement partition framing. |
 | `door-weatherstripping.webp` | A gloved hand checking an exterior door seal; blog illustration. |
 
-The owner registered `arinhandyman.com` with Cloudflare. This contact update uses the approved `arin@youssefian.com` address. The site canonical URLs still point to GitHub Pages; custom-domain hosting and any future domain email routing are separate configuration steps.
+The custom domain `arinhandyman.com` is managed in Cloudflare and configured in the repository’s GitHub Pages settings. Cloudflare DNS points the apex to GitHub Pages at `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`; `www` is a CNAME to `ariesyous.github.io`. These web records use DNS-only mode so GitHub Pages handles HTTPS and the www-to-apex redirect. The site uses a custom Actions workflow, so the domain must be managed in Pages settings; a CNAME file in the artifact does not configure it. See [GitHub’s custom-domain guidance](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site). Email remains the approved `arin@youssefian.com` address; this domain setup does not configure new mailboxes or forwarding.

@@ -93,12 +93,12 @@ If you use a formatter, format source files before running the generator. Do not
 
 ## 5. Review the result
 
-Run `node scripts/serve.mjs` and visit `http://localhost:4173/arinwebsite/blog/`. Review the new article and its homepage card at desktop and phone widths. Check:
+Run `node scripts/serve.mjs` and visit `http://localhost:4173/blog/`. Review the new article and its homepage card at desktop and phone widths. Check:
 
 - Title, excerpt, headings, paragraph flow, and readable text without horizontal overflow.
 - Image appearance and descriptive alt text. Retain the existing illustrations without overlay badges or generic concept captions; do not present them as completed customer work.
 - Every inline citation jumps to its corresponding source, and every source link points to the original page.
-- Navigation, breadcrumbs, the return-to-blog link, and the project-enquiry link work under `/arinwebsite/`.
+- Navigation, breadcrumbs, the return-to-blog link, and the project-enquiry link work from the custom-domain root.
 - The console has no errors on article pages, which share navigation code but do not have a contact form.
 - The canonical URL, Open Graph/Twitter fields, publication dates, and JSON-LD describe this article. The default sharing graphic is the branded company preview.
 

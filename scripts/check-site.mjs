@@ -4,7 +4,7 @@ import { dirname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const site = resolve(dirname(fileURLToPath(import.meta.url)), "../site");
-const base = new URL("https://ariesyous.github.io/arinwebsite/");
+const base = new URL("https://arinhandyman.com/");
 const email = "arin@youssefian.com";
 const phone = "+14164550606";
 const walk = (directory) => readdirSync(directory, { withFileTypes: true })

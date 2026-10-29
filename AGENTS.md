@@ -5,7 +5,7 @@ This is a static website for **Arin Handyman and Contracting**, serving Halton a
 ## Before making changes
 
 - Read `README.md`. For blog work, also read `docs/blog-workflow.md`.
-- The publishing root is `site/`. GitHub Actions deploys it to `https://ariesyous.github.io/arinwebsite/` on pushes to `main`.
+- The publishing root is `site/`. GitHub Actions deploys it to `https://arinhandyman.com/` on pushes to `main`.
 - Keep the site front-end only. The approved enquiry address is `arin@youssefian.com`, displayed with a `mailto:` link. The approved public phone is `(416) 455-0606`, linked as `tel:+14164550606`. No contact form, backend, or stored enquiries are configured.
 - Retain the existing hero, project-idea, and blog images and layout. The owner approved removing the visible AI/concept badges and captions; do not remove or replace the photos as part of that cleanup. Image provenance remains in `image-prompts.md`.
 - Do not invent completed projects, customer reviews, credentials, years of experience, service guarantees, prices, or an individual expert author. Keep the gallery titled “Project ideas”; do not describe these images as completed customer work or portraits of Arin.
@@ -30,7 +30,7 @@ This is a static website for **Arin Handyman and Contracting**, serving Halton a
 ## Verification and deployment
 
 - Follow `docs/blog-workflow.md` for the complete authoring process and content example.
-- Use relative links for page navigation and assets beneath `/arinwebsite/`; canonical, Open Graph, Twitter Card, and structured-data URLs must be absolute HTTPS URLs.
+- Use relative links for page navigation and assets from the domain root; canonical, Open Graph, Twitter Card, and structured-data URLs must be absolute HTTPS URLs.
 - When changing CSS or JavaScript, increment its cache version in the homepage and regenerate the blog. When changing a social image, use a new versioned image filename and update all sharing tags, including the generator's shared-image constant.
 - Format source files before generation; formatting generated HTML afterward makes it stale. Run the generator again if needed.
 - Check relevant desktop and phone layouts, links, citations, images, browser errors, and sharing metadata. After publishing, monitor the Actions run and verify the live URLs.
