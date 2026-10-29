@@ -31,6 +31,8 @@ jobs:
         run: node scripts/build-discovery.mjs --check
       - name: Check public site and contact links
         run: node scripts/check-site.mjs
+      - name: Check analytics consent behavior
+        run: node scripts/check-analytics.mjs
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static website

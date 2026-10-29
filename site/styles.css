@@ -1427,6 +1427,52 @@ p {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+.analytics-choice {
+  position: fixed;
+  inset: auto 20px 20px;
+  z-index: 1000;
+  max-width: 1080px;
+  margin-inline: auto;
+  padding: 24px;
+  background: #f7f4ed;
+  color: #272725;
+  border: 1px solid #272725;
+  border-radius: 4px;
+  box-shadow: 0 8px 35px #0003;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.analytics-choice[hidden] { display: none; }
+.analytics-choice p { margin: 8px 0 16px; }
+.analytics-choice a, .privacy-details a { text-decoration: underline; }
+.analytics-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.analytics-actions button {
+  padding: 10px 18px;
+  min-height: 44px;
+  font: inherit;
+  cursor: pointer;
+  color: #272725;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+}
+.analytics-actions button:first-child { background: #e99a54; }
+.analytics-settings {
+  background: none;
+  color: inherit;
+  border: 0;
+  padding: 10px 0;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  min-height: 44px;
+}
+.privacy-details { padding-block: 16px 30px; font-size: 16px; line-height: 1.65; }
+.privacy-details summary { cursor: pointer; padding-block: 8px; }
+.privacy-details p { margin-top: 16px; max-width: 85ch; }
+@media (max-width: 600px) {
+  .analytics-choice { inset: auto 12px 12px; padding: 18px; max-height: 70vh; overflow-y: auto; }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

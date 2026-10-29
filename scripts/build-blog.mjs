@@ -117,8 +117,9 @@ const icons = home.match(
 )?.[0];
 const stylesheet = home.match(/href="(styles\.css[^\"]*)"/)?.[1];
 const script = home.match(/src="(script\.js[^\"]*)"/)?.[1];
+const analytics = home.match(/src="(analytics\.js[^\"]*)"/)?.[1];
 assert(
-  header && footer && icons && stylesheet && script,
+  header && footer && icons && stylesheet && script && analytics,
   "Could not find shared homepage layout",
 );
 const arrow =
@@ -127,7 +128,9 @@ function sharedLinks(markup, prefix, current = false) {
   return markup.replace(
     /(<a\b[^>]*\bhref=")([^"]+)(")/g,
     (match, before, href, after) => {
-      const rewritten = /class="back-top"/.test(before)
+      const rewritten = /^(?:https?:|mailto:|tel:)/.test(href) || href === "#privacy-details"
+        ? href
+        : /class="back-top"/.test(before)
         ? "#main"
         : href.startsWith("#")
           ? `${prefix}index.html${href}`
@@ -158,6 +161,7 @@ function layout({ title, description, canonical, prefix, main, post, schema }) {
 ${post ? `  <meta property="article:published_time" content="${post.published}"><meta property="article:modified_time" content="${post.updated}">` : ""}
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="twitter:image:alt" content="${esc(socialImageAlt)}">
   <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${prefix}${stylesheet}"><link rel="stylesheet" href="${prefix}blog/blog.css?v=3"><script src="${prefix}${script}" defer></script>
+  <script src="${prefix}${analytics}" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>
 </head>
 <body class="blog-page"><a class="skip-link" href="#main">Skip to content</a>

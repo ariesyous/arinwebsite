@@ -50,6 +50,8 @@ for (const path of htmlFiles) {
   assert(!/<(?:form|input|textarea|select)\b/i.test(html), `Unexpected enquiry form in ${relative}`);
   assert(/<html\b[^>]*lang="en-CA"/.test(html), `Missing page language: ${relative}`);
   assert(html.includes("Arin Handyman and Contracting"), `Missing business name: ${relative}`);
+  assert(/src="(?:\.\.\/)*analytics\.js\?v=\d+" defer/.test(html), `Missing versioned analytics loader: ${relative}`);
+  assert(html.includes('id="privacy-details"') && html.includes('data-analytics-settings'), `Missing analytics disclosure or preferences: ${relative}`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(new Set(ids).size, ids.length, `Duplicate HTML ids: ${relative}`);
   for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
@@ -78,6 +80,7 @@ for (const path of htmlFiles) {
   }
 }
 const home = readFileSync(resolve(site, "index.html"), "utf8");
+assert(!readFileSync(resolve(site, "business-plan/index.html"), "utf8").includes("analytics.js"), "Planning report must not load analytics");
 assert(home.includes(`href="tel:${phone}">(416) 455-0606</a>`), "Missing visible business phone link");
 assert(home.includes(`href="mailto:${email}"`), "Missing visible business email link");
 assert(home.includes(`href="mailto:${email}?subject=Project%20enquiry&amp;body=`), "Missing project enquiry mail link");

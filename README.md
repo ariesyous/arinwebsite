@@ -49,7 +49,21 @@ The homepage and generated blog pages link to the sitemap and llms.txt in their 
 
 Run `node scripts/build-discovery.mjs` after generating the blog whenever articles, canonical URLs, or discovery copy change, then run `node scripts/build-discovery.mjs --check`. Edit summary wording in the generator when the business information changes; never hand-edit its three generated files. Commit the generator and outputs together. CI rejects missing or stale outputs.
 
-After deployment, verify `/llms.txt`, `/sitemap.xml`, and their linked public pages. Submit `https://arinhandyman.com/sitemap.xml` in the verified property's Google Search Console and Bing Webmaster Tools; this repository does not submit it automatically. [Google's sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) explains submission and canonical URLs. Standard crawlable content remains the foundation: [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features) does not require special AI files and does not guarantee inclusion.
+After deployment, verify `/llms.txt`, `/sitemap.xml`, and their linked public pages. The sitemap was submitted in Google Search Console on October 28, 2026, with status **Success** and six discovered pages. The domain property `arinhandyman.com` is verified under `aries@magnascale.com` using a Cloudflare TXT record; retain that record. Search Console's URL Inspection confirmed the homepage is indexed. Submission does not guarantee every article is indexed, and future additions are discovered when Google rereads the sitemap. Bing Webmaster Tools has not been configured by this integration. [Google's sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) explains submission and canonical URLs. Standard crawlable content remains the foundation: [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features) does not require special AI files and does not guarantee inclusion.
+
+## Website analytics
+
+Google Analytics and Microsoft Clarity are managed under **aries@magnascale.com** for **Arin Handyman and Contracting**:
+
+- GA4 account: `MagnascaleWebsite` (`336652256`); dedicated Arin property: `561304448`; web stream: `16225476949`; measurement ID: `G-2XSD91R1NJ`. Reporting uses Toronto time and Canadian dollars.
+- Clarity project: `z528akcxqr`, website `https://arinhandyman.com`, connected to Arin's GA4 property. Clarity's default Cookies switch is off (Consent Mode); the website passes analytics consent after acceptance while keeping advertising consent denied. Bot detection remains enabled.
+- Search Console: domain property `arinhandyman.com`, linked to Arin's GA4 web stream.
+
+`site/analytics.js` loads both providers only after a visitor accepts analytics. The shared footer explains analytics and provides preferences to decline or withdraw consent. A browser-local choice expires after 180 days. Advertising consent remains denied. No vendor scripts load on local previews, and the separate business plan does not include the loader. Google page-location data omits query strings and fragments; referral information is reduced to its origin. No user IDs or enquiry content are explicitly sent. Provider scripts may collect their own usage data as described in the footer disclosures.
+
+The blog generator copies the loader's versioned reference and shared footer from the homepage. Change public IDs in `site/analytics.js` only when intentionally migrating properties, increment its cache version in the homepage, and regenerate the blog. Never add account credentials, API secrets, or access tokens to the repository. Run `node scripts/check-analytics.mjs` to verify acceptance, refusal, persistence, expiry, withdrawal, storage failure, and local-preview exclusion. Confirm actual receipt in GA4 Realtime and Clarity after deployment; local checks alone do not prove data ingestion.
+
+Implementation references: [Google consent mode](https://developers.google.com/tag-platform/security/guides/consent), [Clarity setup](https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-setup), [Clarity consent API](https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-consent-api-v2), and [Clarity disclosures](https://learn.microsoft.com/en-us/clarity/setup-and-installation/privacy-disclosure).
 
 ## Business plan
 
@@ -81,7 +95,7 @@ Sharing metadata uses absolute HTTPS URLs. When replacing the preview image, use
 - The approved public phone is **(416) 455-0606**, linked as `tel:+14164550606`. There is no contact form, enquiry storage, booking, payment integration, or backend. No email service credentials are needed. Mailbox delivery is not tested by the repository checks.
 - The hero, project ideas, blog photographs, and existing layout are retained. The owner requested removing the visible AI/concept badges and captions. The gallery remains project ideas rather than a portfolio of completed customer work. Image provenance is retained below and in `image-prompts.md`.
 - No fabricated testimonials, credentials, experience figures, or guarantees.
-- Relative asset paths support project-path hosting. No runtime dependencies, trackers, remote fonts, third-party scripts, or external APIs.
+- Relative asset paths support project-path hosting. No package dependencies or remote fonts. Optional Google Analytics and Microsoft Clarity scripts load after visitor consent as documented above.
 - Run `node scripts/check-site.mjs` before publishing. CI verifies local links, anchors, shared image dimensions, approved phone and email links, retained photographs, and the absence of demo forms and customer-facing concept labels.
 - Confirm the services, service area, and inbox access with Arin before the business launch. Test the mail link in a configured email app, or copy the address into webmail.
 
