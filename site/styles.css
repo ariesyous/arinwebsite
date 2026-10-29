@@ -700,14 +700,16 @@ p {
   border-radius: 3px;
   padding: 32px;
 }
-.contact-email {
+.contact-email,
+.contact-phone {
   font-size: clamp(20px, 2vw, 26px);
   letter-spacing: -0.025em;
   overflow-wrap: anywhere;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-.contact-email:hover {
+.contact-email:hover,
+.contact-phone:hover {
   color: #f5b18c;
 }
 .contact-card h3 {

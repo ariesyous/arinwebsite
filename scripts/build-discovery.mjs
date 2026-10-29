@@ -58,7 +58,7 @@ const llms = `# Arin Handyman and Contracting
 
 The service categories shown are handyman repairs, drywall and finishing, painting and refreshes, carpentry and details, flooring and tile, kitchen and bath updates, and basement framing and drywall. Listed communities include Milton, Mississauga, Oakville, Brampton, Burlington, and Toronto.
 
-Project enquiries: arinhandyman@gmail.com. The website displays the address and links to the visitor’s email app; it has no contact form, booking, payment system, or public phone number. The site does not establish verified trade licences, credentials, reviews, prices, or guarantees.
+Project enquiries: (416) 455-0606 or arin@youssefian.com. The website displays these contact details with tap-to-call and email links; it has no contact form, booking, or payment system. The site does not establish verified trade licences, credentials, reviews, prices, or guarantees.
 
 Home notes articles provide general planning guidance, with numbered source citations and deliberate publication, update, and source-check dates. Read each article's qualifications and original sources before relying on guidance for a specific property or municipality.
 
@@ -68,7 +68,7 @@ Home notes articles provide general planning guidance, with numbered source cita
 - [Services](${base}#services): Descriptions of the service categories shown on the site.
 - [Service area](${base}#areas): Halton and Greater Toronto Area communities listed on the site.
 - [About Arin](${base}#about): The site's business introduction.
-- [Contact](${base}#contact): Business email address and details to include in an enquiry.
+- [Contact](${base}#contact): Business phone number, email address, and details to include in an enquiry.
 
 ## Homeowner guides
 

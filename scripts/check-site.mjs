@@ -5,7 +5,8 @@ import { fileURLToPath } from "node:url";
 
 const site = resolve(dirname(fileURLToPath(import.meta.url)), "../site");
 const base = new URL("https://ariesyous.github.io/arinwebsite/");
-const email = "arinhandyman@gmail.com";
+const email = "arin@youssefian.com";
+const phone = "+14164550606";
 const walk = (directory) => readdirSync(directory, { withFileTypes: true })
   .flatMap((entry) => entry.isDirectory()
     ? walk(resolve(directory, entry.name))
@@ -57,6 +58,10 @@ for (const path of htmlFiles) {
       assert.equal(target.pathname, email, `Unapproved email: ${relative}`);
       continue;
     }
+    if (target.protocol === "tel:") {
+      assert.equal(target.pathname, phone, `Unapproved phone number: ${relative}`);
+      continue;
+    }
     assert(["http:", "https:"].includes(target.protocol), `Unexpected URL scheme: ${relative}`);
     if (target.origin === base.origin) localTarget(target);
   }
@@ -73,6 +78,7 @@ for (const path of htmlFiles) {
   }
 }
 const home = readFileSync(resolve(site, "index.html"), "utf8");
+assert(home.includes(`href="tel:${phone}">(416) 455-0606</a>`), "Missing visible business phone link");
 assert(home.includes(`href="mailto:${email}"`), "Missing visible business email link");
 assert(home.includes(`href="mailto:${email}?subject=Project%20enquiry&amp;body=`), "Missing project enquiry mail link");
 for (const asset of ["carpentry", "painting", "tiling", "deck", "bathroom-refresh", "kitchen-refresh", "basement-drywall", "door-weatherstripping"]) assert(existsSync(resolve(site, "assets", `${asset}.webp`)), `Missing retained photo: ${asset}`);

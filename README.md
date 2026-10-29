@@ -45,7 +45,7 @@ See [the complete publishing and research workflow](docs/blog-workflow.md) for t
 - [`site/llms.txt`](site/llms.txt) provides a concise business summary, service-area links, article descriptions, and the site's email enquiry details for agents. It follows the [llms.txt proposal](https://llmstxt.org/); it is supplementary guidance, not a promise of indexing or recommendations.
 - [`site/robots.txt`](site/robots.txt) contains permissive project-path rules and the sitemap URL. **GitHub Pages limitation:** the deployed `/arinwebsite/robots.txt` is not an effective robots policy. Crawlers only apply the file at `https://ariesyous.github.io/robots.txt`, which this repository's deployment does not manage. If you manage that origin-root site, merge the generated directives into its robots file without overwriting rules for other projects. See [Google's robots.txt placement guidance](https://developers.google.com/crawling/docs/robots-txt/create-robots-txt).
 
-The homepage and generated blog pages link to the sitemap and llms.txt in their HTML heads. The homepage also has `WebSite` structured data; the blog retains its `Blog` and `BlogPosting` metadata. These describe the existing content and approved email contact without publishing a phone number. The business plan stays out of discovery files and retains `noindex,nofollow`; do not block its crawling, since crawlers need to read that metadata.
+The homepage and generated blog pages link to the sitemap and llms.txt in their HTML heads. The homepage also has `WebSite` structured data; the blog retains its `Blog` and `BlogPosting` metadata. These describe the existing content and approved phone and email contact details. The business plan stays out of discovery files and retains `noindex,nofollow`; do not block its crawling, since crawlers need to read that metadata.
 
 Run `node scripts/build-discovery.mjs` after generating the blog whenever articles, canonical URLs, or discovery copy change, then run `node scripts/build-discovery.mjs --check`. Edit summary wording in the generator when the business information changes; never hand-edit its three generated files. Commit the generator and outputs together. CI rejects missing or stale outputs.
 
@@ -77,12 +77,12 @@ Sharing metadata uses absolute HTTPS URLs. When replacing the preview image, use
 
 ## Contact and launch details
 
-- The approved enquiry address is **arinhandyman@gmail.com**. The website displays it and provides a mail link with a short project brief; the visitor sends the message in their own email app or webmail.
-- There is no contact form, public phone number, enquiry storage, booking, payment integration, or backend. No email service credentials are needed. Mailbox delivery is not tested by the repository checks.
+- The approved enquiry address is **arin@youssefian.com**. The website displays it and provides a mail link with a short project brief; the visitor sends the message in their own email app or webmail.
+- The approved public phone is **(416) 455-0606**, linked as `tel:+14164550606`. There is no contact form, enquiry storage, booking, payment integration, or backend. No email service credentials are needed. Mailbox delivery is not tested by the repository checks.
 - The hero, project ideas, blog photographs, and existing layout are retained. The owner requested removing the visible AI/concept badges and captions. The gallery remains project ideas rather than a portfolio of completed customer work. Image provenance is retained below and in `image-prompts.md`.
 - No fabricated testimonials, credentials, experience figures, or guarantees.
 - Relative asset paths support project-path hosting. No runtime dependencies, trackers, remote fonts, third-party scripts, or external APIs.
-- Run `node scripts/check-site.mjs` before publishing. CI verifies local links, anchors, shared image dimensions, approved email links, retained photographs, and the absence of demo forms and customer-facing concept labels.
+- Run `node scripts/check-site.mjs` before publishing. CI verifies local links, anchors, shared image dimensions, approved phone and email links, retained photographs, and the absence of demo forms and customer-facing concept labels.
 - Confirm the services, service area, and inbox access with Arin before the business launch. Test the mail link in a configured email app, or copy the address into webmail.
 
 ## Image provenance
@@ -102,4 +102,4 @@ The social preview graphic was created with the same built-in tool using the car
 | `basement-drywall.webp`      | Worker taping drywall beside exposed basement partition framing. |
 | `door-weatherstripping.webp` | A gloved hand checking an exterior door seal; blog illustration. |
 
-Keep the approved email address until a purchased domain and its forwarding rule are configured and tested. A domain address discussed as an example must not be published as working contact information.
+The owner registered `arinhandyman.com` with Cloudflare. This contact update uses the approved `arin@youssefian.com` address. The site canonical URLs still point to GitHub Pages; custom-domain hosting and any future domain email routing are separate configuration steps.

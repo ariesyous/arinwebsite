@@ -6,7 +6,7 @@ This is a static website for **Arin Handyman and Contracting**, serving Halton a
 
 - Read `README.md`. For blog work, also read `docs/blog-workflow.md`.
 - The publishing root is `site/`. GitHub Actions deploys it to `https://ariesyous.github.io/arinwebsite/` on pushes to `main`.
-- Keep the site front-end only. The approved enquiry address is `arinhandyman@gmail.com`, displayed with a `mailto:` link. No public phone number, contact form, backend, or stored enquiries are configured.
+- Keep the site front-end only. The approved enquiry address is `arin@youssefian.com`, displayed with a `mailto:` link. The approved public phone is `(416) 455-0606`, linked as `tel:+14164550606`. No contact form, backend, or stored enquiries are configured.
 - Retain the existing hero, project-idea, and blog images and layout. The owner approved removing the visible AI/concept badges and captions; do not remove or replace the photos as part of that cleanup. Image provenance remains in `image-prompts.md`.
 - Do not invent completed projects, customer reviews, credentials, years of experience, service guarantees, prices, or an individual expert author. Keep the gallery titled “Project ideas”; do not describe these images as completed customer work or portraits of Arin.
 
